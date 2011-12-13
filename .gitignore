@@ -13,13 +13,3 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-
-*/tmp/
-*/log/
-*/nbproject/
-*/.bundle/
-*.log
-*.sqlite3
-*.DS_Store
-*.idea
