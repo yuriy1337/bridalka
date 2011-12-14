@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bridalka</title>
+    <% if content_for?(:head) %>
+      <%= content_for(:head) %>
+    <% else %>
+      <title>Bridal Kaleidoscope</title>
+    <% end %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
@@ -18,8 +22,8 @@
           </div>
           <div id='login' class="inline">
             <%= form_tag('/login', :id => 'login-form', :class => 'form') do %>
-              <%= text_field_tag(:username, 'Username', :class => '.text input', :title => 'Username') %>
-              <%= password_field_tag(:password, 'Password', :class => '.text input', :title => 'Password') %>
+            <%= text_field_tag(:username, 'Username', :class => '.text input', :title => 'Username') %>
+            <%= password_field_tag(:password, 'Password', :class => '.text input', :title => 'Password') %>
             <% end %>
           </div>
         </div>
@@ -47,8 +51,8 @@
         </div>
       </div>
       <!-- End Header -->
-      <div class='main-content'>
-        <%= yield %>  
+      <div class='main-content' class='center'>
+        <%= yield %>
       </div>
     </div>
   </body>
