@@ -1,6 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'compass'
+require 'sass-rails'
 
 module Compass
   RAILS_LOADED = true
@@ -51,5 +53,6 @@ module Bridalka
     config.assets.version = '1.0'
     
     config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+    config.sass.load_paths << Compass::Frameworks['blueprint'].stylesheets_directory
   end
 end

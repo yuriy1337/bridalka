@@ -13,7 +13,15 @@
       <!-- Header -->
       <div id='header' class='center'>
         <div id='top'>
-          <%= image_tag "logo/png.png" %>
+          <div id='logo' class="inline">
+            <%= image_tag "logo/png.png" %>
+          </div>
+          <div id='login' class="inline">
+            <%= form_tag('/login', :id => 'login-form', :class => 'form') do %>
+              <%= text_field_tag(:username, 'Username', :class => '.text input', :title => 'Username') %>
+              <%= password_field_tag(:password, 'Password', :class => '.text input', :title => 'Password') %>
+            <% end %>
+          </div>
         </div>
         <div id='nav'>
           <ul id='nav_items'>
@@ -39,7 +47,9 @@
         </div>
       </div>
       <!-- End Header -->
-      <%= yield %>
+      <div class='main-content'>
+        <%= yield %>  
+      </div>
     </div>
   </body>
 </html>
