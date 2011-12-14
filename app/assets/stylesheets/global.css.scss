@@ -1,15 +1,21 @@
 @import "compass";
-
-$black: #000000;
-
+@import "compass/css3";
 
 *{
   font-size: 17px;
   font-family: Verdana, "sans-serif", serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  margin: 10px 0 0 0;
+  margin: 0 0 0 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  @include background-image(linear-gradient(top, #FFFFFF 0%, #C4C4C4 100%));
 }
 
 .center {
@@ -17,6 +23,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+}
+
+#content-all {
+  height: 97%;
+  margin-top: 10px;
+  background-color: white;
+  @include box-shadow(black 2px 2px 5px 0px);
 }
 
 $nav-default: #C4C4C4;
@@ -34,6 +47,8 @@ $nav-height: 50px;
   //margin-left: auto;
   //margin-right: auto;
   text-align: center;
+  
+  @include box-shadow(black 2px 2px 5px 0px);
     
   @include filter-gradient(#9b9b9b, #707070, vertical); // IE6-9
   @include background-image(linear-gradient(top, #9b9b9b 1%,#707070 100%));

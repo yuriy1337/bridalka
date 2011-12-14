@@ -9,35 +9,37 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <!-- Header -->
-    <div id='header' class="center">
-      <div id='top'>
-        <%= image_tag "logo/png.png" %>
+    <div id='content-all' class='center'>
+      <!-- Header -->
+      <div id='header' class='center'>
+        <div id='top'>
+          <%= image_tag "logo/png.png" %>
+        </div>
+        <div id='nav'>
+          <ul id='nav_items'>
+            <li class="default">
+              Home
+            </li>
+            <li class="default">
+              Page3
+            </li>
+            <li class="default">
+              Page4
+            </li>
+            <li class="default">
+              Page5
+            </li>
+            <li class="default">
+              Page6
+            </li>
+            <li class="default">
+              Page7
+            </li>
+          </ul>
+        </div>
       </div>
-      <div id='nav'>
-        <ul id='nav_items'>
-          <li class="default">
-            Home
-          </li>
-          <li class="default">
-            Page3
-          </li>
-          <li class="default">
-            Page4
-          </li>
-          <li class="default">
-            Page5
-          </li>
-          <li class="default">
-            Page6
-          </li>
-          <li class="default">
-            Page7
-          </li>
-        </ul>
-      </div>
+      <!-- End Header -->
+      <%= yield %>
     </div>
-    <!-- End Header -->
-    <%= yield %>
   </body>
 </html>
