@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
   
+  resources :galleries
+
   root :to => 'home#index'
   
   # The priority is based upon order of creation:
