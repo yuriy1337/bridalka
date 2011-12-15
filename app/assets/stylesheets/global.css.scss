@@ -112,12 +112,17 @@ $nav-height: 50px;
   
   ul { 
     list-style: none;
-    
+    display: table;
+    width: 100%;
     li {
-      //padding: 4px 20px 4px 20px;
-      padding: ($nav-height - 20px) / 2 $nav-height - 8px ($nav-height - 20px) / 2 $nav-height - 8px;
-      float: left;
-      margin: 0 0 0 0;
+      display: table-cell;
+      vertical-align: middle;
+      a {
+        display: block;
+        text-align: center;
+        height: $nav-height;
+        line-height: $nav-height;
+      }
     }
     
     .default {

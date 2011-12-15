@@ -181,14 +181,22 @@ body {
 /* line 113, ../../app/assets/stylesheets/global.css.scss */
 #nav ul {
   list-style: none;
+  display: table;
+  width: 100%;
 }
-/* line 116, ../../app/assets/stylesheets/global.css.scss */
+/* line 117, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li {
-  padding: 15px 42px 15px 42px;
-  float: left;
-  margin: 0 0 0 0;
+  display: table-cell;
+  vertical-align: middle;
 }
-/* line 123, ../../app/assets/stylesheets/global.css.scss */
+/* line 120, ../../app/assets/stylesheets/global.css.scss */
+#nav ul li a {
+  display: block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 128, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .default {
   color: #FFFFFF;
   background-color: #9b9b9b;
@@ -201,7 +209,7 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 130, ../../app/assets/stylesheets/global.css.scss */
+/* line 135, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .hover {
   color: #FFFFFF;
   background: #ea5507;
