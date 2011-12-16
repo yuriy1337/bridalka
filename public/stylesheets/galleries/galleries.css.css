@@ -1,0 +1,16 @@
+/*
+ * Classes
+ */
+/* line 12, ../../../app/assets/stylesheets/galleries/galleries.css.scss */
+.thumb img {
+  width: 75px;
+  height: 75px;
+}
+
+/*
+ * /Classes
+ */
+/* line 22, ../../../app/assets/stylesheets/galleries/galleries.css.scss */
+#main-content {
+  margin: 20px 0 0 0;
+}

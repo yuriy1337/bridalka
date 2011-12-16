@@ -1,0 +1,79 @@
+<div id='gallery'>
+  <div id="controls"></div>
+  <div id="loading"></div>
+  <div id="slideshow"></div>
+  <div id="caption"></div>
+  <div id="thumbs">
+    <ul class="thumbs noscript">
+      <li>
+        <!--<a class="thumb" name="optionalCustomIdentifier" href="path/to/slide" title="your image title"> -->
+        <%= link_to(image_path("galleries/1/0001.JPG"), :class => 'thumb', :name => 'Image 1', :title => 'Title1') do %>
+        <%= image_tag "galleries/1/0001.JPG", :alt =>"", :style => "width: 20px; height: 20px;"%>
+        <% end %>
+        <div class="caption">
+          (Any html can go here)
+        </div>
+      </li>
+      <li>
+        <%= link_to(image_path("galleries/1/0002.JPG"), :class => 'thumb', :name => 'Image 2', :title => 'Title2') do %>
+        <%= image_tag "galleries/1/0002.JPG", :alt =>"", :style => "width: 20px; height: 20px;"%>
+        <% end %>
+        <div class="caption">
+          (Any html can go here)
+        </div>
+      </li>
+      <li>
+        <%= link_to(image_path("galleries/1/0003.jpg"), :class => 'thumb', :name => 'Image 3', :title => 'Title3') do %>
+        <%= image_tag "galleries/1/0003.jpg", :alt =>"", :style => "width: 20px; height: 20px;"%>
+        <% end %>
+        <div class="caption">
+          (Any html can go here)
+        </div>
+      </li>
+      <li>
+        <%= link_to(image_path("galleries/1/0004.jpg"), :class => 'thumb', :name => 'Image 4', :title => 'Title4') do %>
+        <%= image_tag "galleries/1/0004.jpg", :alt =>"", :style => "width: 20px; height: 20px;"%>
+        <% end %>
+        <div class="caption">
+          (Any html can go here)
+        </div>
+      </li>
+      <li>
+        <%= link_to(image_path("galleries/1/0005.JPG"), :class => 'thumb', :name => 'Image 5', :title => 'Title5') do %>
+        <%= image_tag "galleries/1/0005.JPG", :alt =>"", :style => "width: 20px; height: 20px;"%>
+        <% end %>
+        <div class="caption">
+          (Any html can go here)
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--
+<h1>Listing galleries</h1>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+
+<% @galleries.each do |gallery| %>
+<tr>
+<td><%= gallery.name %></td>
+<td><%= gallery.type %></td>
+<td><%= link_to 'Show', gallery %></td>
+<td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+<td><%= link_to 'Destroy', gallery, confirm: 'Are you sure?', method: :delete %></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery', new_gallery_path %>
+-->

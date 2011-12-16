@@ -28,6 +28,11 @@
   text-align: left;
 }
 
+/* line 36, ../../app/assets/stylesheets/global.css.scss */
+.clear {
+@reset-float;
+}
+
 /*
  * /Classes
  */
