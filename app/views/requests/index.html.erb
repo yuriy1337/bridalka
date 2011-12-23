@@ -1,0 +1,45 @@
+<h1>Listing requests</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Zip code</th>
+    <th>Wedding date</th>
+    <th>Wedding location</th>
+    <th>Ceremony venue</th>
+    <th>Reception venue</th>
+    <th>Referent</th>
+    <th>Referent name</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td><%= request.first_name %></td>
+    <td><%= request.last_name %></td>
+    <td><%= request.email %></td>
+    <td><%= request.phone %></td>
+    <td><%= request.zip_code %></td>
+    <td><%= request.wedding_date %></td>
+    <td><%= request.wedding_location %></td>
+    <td><%= request.ceremony_venue %></td>
+    <td><%= request.reception_venue %></td>
+    <td><%= request.referent %></td>
+    <td><%= request.referent_name %></td>
+    <td><%= request.message %></td>
+    <td><%= link_to 'Show', request %></td>
+    <td><%= link_to 'Edit', edit_request_path(request) %></td>
+    <td><%= link_to 'Destroy', request, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Request', new_request_path %>

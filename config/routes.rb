@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
   
+  resources :requests
+
   resources :galleries
 
   root :to => 'home#index'

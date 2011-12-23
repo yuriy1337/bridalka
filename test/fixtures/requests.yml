@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  zip_code: 1
+  wedding_date: 2011-12-23
+  wedding_location: MyString
+  ceremony_venue: MyString
+  reception_venue: MyString
+  referent: MyString
+  referent_name: MyString
+  message: 
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  zip_code: 1
+  wedding_date: 2011-12-23
+  wedding_location: MyString
+  ceremony_venue: MyString
+  reception_venue: MyString
+  referent: MyString
+  referent_name: MyString
+  message: 

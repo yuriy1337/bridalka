@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @request.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @request.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @request.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @request.phone %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @request.zip_code %>
+</p>
+
+<p>
+  <b>Wedding date:</b>
+  <%= @request.wedding_date %>
+</p>
+
+<p>
+  <b>Wedding location:</b>
+  <%= @request.wedding_location %>
+</p>
+
+<p>
+  <b>Ceremony venue:</b>
+  <%= @request.ceremony_venue %>
+</p>
+
+<p>
+  <b>Reception venue:</b>
+  <%= @request.reception_venue %>
+</p>
+
+<p>
+  <b>Referent:</b>
+  <%= @request.referent %>
+</p>
+
+<p>
+  <b>Referent name:</b>
+  <%= @request.referent_name %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @request.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

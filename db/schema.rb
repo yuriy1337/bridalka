@@ -11,11 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215180529) do
+ActiveRecord::Schema.define(:version => 20111223190551) do
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
     t.integer  "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requests", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "zip_code"
+    t.date     "wedding_date"
+    t.string   "wedding_location"
+    t.string   "ceremony_venue"
+    t.string   "reception_venue"
+    t.string   "referent"
+    t.string   "referent_name"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
