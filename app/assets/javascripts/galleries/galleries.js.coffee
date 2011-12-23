@@ -6,7 +6,11 @@
 $ ->
   pageload = (hash) ->
     if hash
-      $.galleriffic.gotoImage hash
+      if hash is "toggleThumbs"
+        gallery.toggleThumbs()
+        false
+      else
+        $.galleriffic.gotoImage hash
     else
       gallery.gotoIndex 0
   $("div.navigation").css
@@ -40,6 +44,8 @@ $ ->
     nextLinkText: "Next Photo &rsaquo;"
     nextPageLinkText: "Next &rsaquo;"
     prevPageLinkText: "&lsaquo; Prev"
+    hideThumbsText: "&lsaquo; &lsaquo;"
+    showThumbsText: "&rsaquo; &rsaquo;"
     enableHistory: true
     autoStart: false
     syncTransitions: true
