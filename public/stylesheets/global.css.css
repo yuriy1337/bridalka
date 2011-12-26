@@ -29,25 +29,51 @@
 }
 
 /* line 36, ../../app/assets/stylesheets/global.css.scss */
+.center-min-width {
+  width: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* line 43, ../../app/assets/stylesheets/global.css.scss */
 .clear {
 @reset-float;
+}
+
+/* line 47, ../../app/assets/stylesheets/global.css.scss */
+.input {
+  -moz-box-shadow: black 1px 1px 1px 0px;
+  -webkit-box-shadow: black 1px 1px 1px 0px;
+  -o-box-shadow: black 1px 1px 1px 0px;
+  box-shadow: black 1px 1px 1px 0px;
+}
+
+/* line 51, ../../app/assets/stylesheets/global.css.scss */
+.gray-border {
+  border-color: #DDDDDD;
+  border-style: solid;
+  border-width: 1px;
+  text-align: left;
 }
 
 /*
  * /Classes
  */
-/* line 44, ../../app/assets/stylesheets/global.css.scss */
-* {
+/*
+ 
+{
   font-size: 17px;
   font-family: Verdana, "sans-serif", serif;
 }
 
-/* line 49, ../../app/assets/stylesheets/global.css.scss */
+*/
+/* line 71, ../../app/assets/stylesheets/global.css.scss */
 html {
   height: 100%;
 }
 
-/* line 53, ../../app/assets/stylesheets/global.css.scss */
+/* line 75, ../../app/assets/stylesheets/global.css.scss */
 body {
   margin: 0 0 0 0;
   height: 100%;
@@ -61,7 +87,7 @@ body {
   background-image: linear-gradient(top, #ffffff 0%, #c4c4c4 100%);
 }
 
-/* line 61, ../../app/assets/stylesheets/global.css.scss */
+/* line 83, ../../app/assets/stylesheets/global.css.scss */
 #content-all {
   height: 97%;
   margin-top: 10px;
@@ -72,18 +98,18 @@ body {
   box-shadow: black 2px 2px 5px 0px;
 }
 
-/* line 69, ../../app/assets/stylesheets/global.css.scss */
+/* line 91, ../../app/assets/stylesheets/global.css.scss */
 #logo img {
   margin: 10px 5px 5px 10px;
 }
 
-/* line 74, ../../app/assets/stylesheets/global.css.scss */
+/* line 96, ../../app/assets/stylesheets/global.css.scss */
 #login {
   float: right;
   margin: 10px 5px 5px 10px;
 }
 
-/* line 79, ../../app/assets/stylesheets/global.css.scss */
+/* line 101, ../../app/assets/stylesheets/global.css.scss */
 #login-form {
   font-size: 8px;
 }
@@ -154,7 +180,7 @@ body {
 #login-form input.text, #login-form input.title, #login-form input[type=email], #login-form input[type=text], #login-form input[type=password] {
   height: 10px;
 }
-/* line 86, ../../app/assets/stylesheets/global.css.scss */
+/* line 108, ../../app/assets/stylesheets/global.css.scss */
 #login-form input {
   -moz-box-shadow: black 1px 1px 1px 0px;
   -webkit-box-shadow: black 1px 1px 1px 0px;
@@ -162,7 +188,7 @@ body {
   box-shadow: black 1px 1px 1px 0px;
 }
 
-/* line 95, ../../app/assets/stylesheets/global.css.scss */
+/* line 117, ../../app/assets/stylesheets/global.css.scss */
 #nav {
   width: 100%;
   height: 50px;
@@ -183,25 +209,25 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 113, ../../app/assets/stylesheets/global.css.scss */
+/* line 135, ../../app/assets/stylesheets/global.css.scss */
 #nav ul {
   list-style: none;
   display: table;
   width: 100%;
 }
-/* line 117, ../../app/assets/stylesheets/global.css.scss */
+/* line 139, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 120, ../../app/assets/stylesheets/global.css.scss */
+/* line 142, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li a {
   display: block;
   text-align: center;
   height: 50px;
   line-height: 50px;
 }
-/* line 128, ../../app/assets/stylesheets/global.css.scss */
+/* line 150, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .default {
   color: #FFFFFF;
   background-color: #9b9b9b;
@@ -214,7 +240,7 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 135, ../../app/assets/stylesheets/global.css.scss */
+/* line 157, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .hover {
   color: #FFFFFF;
   background: #ea5507;

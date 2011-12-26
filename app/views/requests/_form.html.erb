@@ -1,65 +1,89 @@
-<%= form_for(@request) do |f| %>
+<div id="request-form" class="gray-border center">
+  <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
-
-      <ul>
+  <div id="error_explanation">
+    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+    <ul>
       <% @request.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li>
+        <%= msg %>
+      </li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+  <div id="required-info">
+    * indicates required
+  </div>
+  <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Bride Info</div>
+  <div class="field two-wide">
+    <%= f.label :first_name %>*
+    <br />
+    <%= f.text_field :first_name, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.label :last_name %>*
+    <br />
+    <%= f.text_field :last_name, :class => "input" %>
+  </div>
+  <div class="field two-wide">
+    <%= f.label :email %>*
+    <br />
+    <%= f.text_field :email, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :phone %>
+    <br />
+    <%= f.text_field :phone, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.label :zip_code %>
+    <br />
+    <%= f.number_field :zip_code, :class => "input" %>
+  </div>
+  <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Wedding Info</div>
+  <div class="field two-wide">
+    <%= f.label :wedding_date %>
+    <br />
+    <%= f.text_field :wedding_date, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :zip_code %><br />
-    <%= f.number_field :zip_code %>
+    <%= f.label :wedding_location %>
+    <br />
+    <%= f.text_field :wedding_location, :class => "input" %>
+  </div>
+  <div class="field two-wide">
+    <%= f.label :ceremony_venue %>
+    <br />
+    <%= f.text_field :ceremony_venue, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :wedding_date %><br />
-    <%= f.date_select :wedding_date %>
+    <%= f.label :reception_venue %>
+    <br />
+    <%= f.text_field :reception_venue, :class => "input" %>
+  </div>
+  <div class="field two-wide">
+    <%= f.label :referent %>
+    <br />
+    <%= f.text_field :referent, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :wedding_location %><br />
-    <%= f.text_field :wedding_location %>
+    <%= f.label :referent_name %>
+    <br />
+    <%= f.text_field :referent_name, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :ceremony_venue %><br />
-    <%= f.text_field :ceremony_venue %>
+    <%= f.label :message %>
+    <br />
+    <%= f.text_area :message, :rows => 5, :cols => 65, :class => "input" %>
   </div>
-  <div class="field">
-    <%= f.label :reception_venue %><br />
-    <%= f.text_field :reception_venue %>
+  <div id="submit-button" class="actions">
+    <% f.submit "Submit", :class => "ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all" %>
+    <%= button_tag(:type => 'submit', :class => "ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all") do %>
+      <%= content_tag(:span, 'Submit', :class => "ui-button-text") %>
+    <% end %> 
+    <button class="ui-state-default ui-corner-all" type="submit">Button</button>
+<a href="#" class="ui-state-default ui-corner-all">Link</a>
   </div>
-  <div class="field">
-    <%= f.label :referent %><br />
-    <%= f.text_field :referent %>
-  </div>
-  <div class="field">
-    <%= f.label :referent_name %><br />
-    <%= f.text_field :referent_name %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_field :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <% end %>
+</div>

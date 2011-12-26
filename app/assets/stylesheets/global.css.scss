@@ -33,18 +33,40 @@
   text-align: left;
 }
 
+.center-min-width {
+  width: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 .clear {
   @reset-float;
+}
+
+.input {
+  @include box-shadow(black 1px 1px 1px 0px);
+}
+
+.gray-border {
+  border-color: #DDDDDD;
+  border-style: solid;
+  border-width: 1px;
+  text-align: left;
 }
 
 /*
  * /Classes
  */
 
-*{
+/*
+ 
+{
   font-size: 17px;
   font-family: Verdana, "sans-serif", serif;
 }
+
+*/
 
 html {
   height: 100%;

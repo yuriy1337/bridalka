@@ -1,3 +1,32 @@
 // Place all the styles related to the Requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.two-wide{
+  float: left;
+  margin-right: 2em;
+  
+}
+
+.field {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+#request-form {
+  width: 650px;
+}
+
+#request-form {
+  padding: 10px 10px 10px 10px;
+}
+
+#bride-info {
+  margin: 1em 0em 0em 0em;
+}
+
+#submit-button {
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-left: 1em;
+}
