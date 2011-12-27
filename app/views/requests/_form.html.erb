@@ -1,8 +1,10 @@
 <div id="request-form" class="gray-border center">
   <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+  <div id="error_explanation" class="ui-state-error ui-corner-all">
+    <h2>
+      <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+      <%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
     <ul>
       <% @request.errors.full_messages.each do |msg| %>
       <li>
@@ -17,17 +19,18 @@
   </div>
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Bride Info</div>
   <div class="field two-wide">
-    <%= f.label :first_name %>*
+    <%= f.label :first_name, "First Name*" %>
     <br />
     <%= f.text_field :first_name, :class => "input" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %>*
+    <%= f.label :last_name %>
     <br />
     <%= f.text_field :last_name, :class => "input" %>
   </div>
+  <div class="clear" ></div>
   <div class="field two-wide">
-    <%= f.label :email %>*
+    <%= f.label :email, "Email*" %>
     <br />
     <%= f.text_field :email, :class => "input" %>
   </div>
@@ -36,14 +39,15 @@
     <br />
     <%= f.text_field :phone, :class => "input" %>
   </div>
+  <div class="clear" ></div>
   <div class="field">
-    <%= f.label :zip_code %>
+    <%= f.label :zip_code %>*
     <br />
     <%= f.number_field :zip_code, :class => "input" %>
   </div>
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Wedding Info</div>
   <div class="field two-wide">
-    <%= f.label :wedding_date %>
+    <%= f.label :wedding_date %>*
     <br />
     <%= f.text_field :wedding_date, :class => "input" %>
   </div>
@@ -63,7 +67,7 @@
     <%= f.text_field :reception_venue, :class => "input" %>
   </div>
   <div class="field two-wide">
-    <%= f.label :referent %>
+    <%= f.label :referent %>*
     <br />
     <%= f.text_field :referent, :class => "input" %>
   </div>
@@ -79,11 +83,9 @@
   </div>
   <div id="submit-button" class="actions">
     <% f.submit "Submit", :class => "ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all" %>
-    <%= button_tag(:type => 'submit', :class => "ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all") do %>
-      <%= content_tag(:span, 'Submit', :class => "ui-button-text") %>
+    <%= button_tag(:type => 'submit', :class => "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-priority-primary jui-font") do %>
+      <%= content_tag(:span, 'Submit', :class => "ui-button-text jui-font") %>
     <% end %> 
-    <button class="ui-state-default ui-corner-all" type="submit">Button</button>
-<a href="#" class="ui-state-default ui-corner-all">Link</a>
   </div>
   <% end %>
 </div>

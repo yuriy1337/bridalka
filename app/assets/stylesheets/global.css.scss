@@ -55,6 +55,18 @@
   text-align: left;
 }
 
+.jui-font {
+  font: 62.5% "Trebuchet MS",sans-serif;
+}
+
+.notice {
+  background-color: #BFFFD2;
+  border-color: black;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  width: 650px;
+}
+
 /*
  * /Classes
  */
@@ -136,6 +148,8 @@ $nav-height: 50px;
     list-style: none;
     display: table;
     width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     li {
       display: table-cell;
       vertical-align: middle;

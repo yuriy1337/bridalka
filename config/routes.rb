@@ -1,7 +1,7 @@
 Bridalka::Application.routes.draw do
   
+  get 'requests/download_prices'
   resources :requests
-
   resources :galleries
 
   root :to => 'home#index'

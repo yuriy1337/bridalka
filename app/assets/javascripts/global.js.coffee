@@ -7,6 +7,14 @@ $ ->
   )
   
   $('.input').click(clearText).blur(setText)
+  
+  $('.ui-button').hover(
+    () ->
+      $(this).addClass "ui-state-hover"
+    () ->
+      $(this).removeClass "ui-state-hover" 
+  )
+    
 
 
 clearText = ->

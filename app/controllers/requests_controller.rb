@@ -44,8 +44,9 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render json: @request, status: :created, location: @request }
+        RequestMailer.request_submitted(@request).deliver
+        format.html { redirect_to requests_download_prices_path, notice: 'Request was successfully created.' }
+        format.json { render json: requests_download_prices_path, status: :created, location: @request }
       else
         format.html { render action: "new" }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -77,6 +78,13 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to requests_url }
+      format.json { head :ok }
+    end
+  end
+  
+  def download_prices
+    respond_to do |format|
+      format.html { render action: "download_prices" }
       format.json { head :ok }
     end
   end

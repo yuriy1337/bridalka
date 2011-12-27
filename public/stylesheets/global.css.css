@@ -57,6 +57,20 @@
   text-align: left;
 }
 
+/* line 58, ../../app/assets/stylesheets/global.css.scss */
+.jui-font {
+  font: 62.5% "Trebuchet MS",sans-serif;
+}
+
+/* line 62, ../../app/assets/stylesheets/global.css.scss */
+.notice {
+  background-color: #BFFFD2;
+  border-color: black;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  width: 650px;
+}
+
 /*
  * /Classes
  */
@@ -68,12 +82,12 @@
 }
 
 */
-/* line 71, ../../app/assets/stylesheets/global.css.scss */
+/* line 83, ../../app/assets/stylesheets/global.css.scss */
 html {
   height: 100%;
 }
 
-/* line 75, ../../app/assets/stylesheets/global.css.scss */
+/* line 87, ../../app/assets/stylesheets/global.css.scss */
 body {
   margin: 0 0 0 0;
   height: 100%;
@@ -87,7 +101,7 @@ body {
   background-image: linear-gradient(top, #ffffff 0%, #c4c4c4 100%);
 }
 
-/* line 83, ../../app/assets/stylesheets/global.css.scss */
+/* line 95, ../../app/assets/stylesheets/global.css.scss */
 #content-all {
   height: 97%;
   margin-top: 10px;
@@ -98,18 +112,18 @@ body {
   box-shadow: black 2px 2px 5px 0px;
 }
 
-/* line 91, ../../app/assets/stylesheets/global.css.scss */
+/* line 103, ../../app/assets/stylesheets/global.css.scss */
 #logo img {
   margin: 10px 5px 5px 10px;
 }
 
-/* line 96, ../../app/assets/stylesheets/global.css.scss */
+/* line 108, ../../app/assets/stylesheets/global.css.scss */
 #login {
   float: right;
   margin: 10px 5px 5px 10px;
 }
 
-/* line 101, ../../app/assets/stylesheets/global.css.scss */
+/* line 113, ../../app/assets/stylesheets/global.css.scss */
 #login-form {
   font-size: 8px;
 }
@@ -180,7 +194,7 @@ body {
 #login-form input.text, #login-form input.title, #login-form input[type=email], #login-form input[type=text], #login-form input[type=password] {
   height: 10px;
 }
-/* line 108, ../../app/assets/stylesheets/global.css.scss */
+/* line 120, ../../app/assets/stylesheets/global.css.scss */
 #login-form input {
   -moz-box-shadow: black 1px 1px 1px 0px;
   -webkit-box-shadow: black 1px 1px 1px 0px;
@@ -188,7 +202,7 @@ body {
   box-shadow: black 1px 1px 1px 0px;
 }
 
-/* line 117, ../../app/assets/stylesheets/global.css.scss */
+/* line 129, ../../app/assets/stylesheets/global.css.scss */
 #nav {
   width: 100%;
   height: 50px;
@@ -209,25 +223,27 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 135, ../../app/assets/stylesheets/global.css.scss */
+/* line 147, ../../app/assets/stylesheets/global.css.scss */
 #nav ul {
   list-style: none;
   display: table;
   width: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
-/* line 139, ../../app/assets/stylesheets/global.css.scss */
+/* line 153, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 142, ../../app/assets/stylesheets/global.css.scss */
+/* line 156, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li a {
   display: block;
   text-align: center;
   height: 50px;
   line-height: 50px;
 }
-/* line 150, ../../app/assets/stylesheets/global.css.scss */
+/* line 164, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .default {
   color: #FFFFFF;
   background-color: #9b9b9b;
@@ -240,7 +256,7 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 157, ../../app/assets/stylesheets/global.css.scss */
+/* line 171, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .hover {
   color: #FFFFFF;
   background: #ea5507;

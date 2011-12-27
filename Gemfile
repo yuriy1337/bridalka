@@ -19,6 +19,13 @@ end
 gem "compass", ">= 0.11.5"
 gem 'jquery-rails'
 
+#mail sending
+gem 'mail'
+gem 'actionmailer'
+
+#validate emails
+gem 'active-model-email-validator'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~ > 3.0.0'
 
