@@ -1,0 +1,27 @@
+<h1>Listing contact_requests</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contact_requests.each do |contact_request| %>
+  <tr>
+    <td><%= contact_request.first_name %></td>
+    <td><%= contact_request.last_name %></td>
+    <td><%= contact_request.message %></td>
+    <td><%= link_to 'Show', contact_request %></td>
+    <td><%= link_to 'Edit', edit_contact_request_path(contact_request) %></td>
+    <td><%= link_to 'Destroy', contact_request, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact request', new_contact_request_path %>

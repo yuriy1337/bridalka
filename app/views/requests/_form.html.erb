@@ -67,9 +67,9 @@
     <%= f.text_field :reception_venue, :class => "input" %>
   </div>
   <div class="field two-wide">
-    <%= f.label :referent %>*
+    <%= f.label :referent, "Referent*" %>
     <br />
-    <%= f.text_field :referent, :class => "input" %>
+    <%= f.select :referent, @referent_options, :class => "select", :include_blank => true  %>
   </div>
   <div class="field">
     <%= f.label :referent_name %>

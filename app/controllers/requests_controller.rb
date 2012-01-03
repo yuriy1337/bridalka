@@ -1,6 +1,13 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
+  before_filter :before, :only => [:new, :create]
+  
+  def before
+    puts "before"
+    @referent_options = [ "None", "Friend", "Relative", "Vendor" ]
+  end
+  
   def index
     @requests = Request.all
 

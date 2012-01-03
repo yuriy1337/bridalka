@@ -11,23 +11,33 @@
 }
 
 /* line 16, ../../../app/assets/stylesheets/requests/requests.css.scss */
-#request-form {
-  width: 650px;
+#request_referent {
+  width: 219px;
 }
 
 /* line 20, ../../../app/assets/stylesheets/requests/requests.css.scss */
 #request-form {
-  padding: 10px 10px 10px 10px;
+  width: 650px;
 }
 
 /* line 24, ../../../app/assets/stylesheets/requests/requests.css.scss */
+#request-form {
+  padding: 10px 10px 10px 10px;
+}
+
+/* line 28, ../../../app/assets/stylesheets/requests/requests.css.scss */
 #bride-info {
   margin: 1em 0em 0em 0em;
 }
 
-/* line 28, ../../../app/assets/stylesheets/requests/requests.css.scss */
+/* line 32, ../../../app/assets/stylesheets/requests/requests.css.scss */
 #submit-button {
   margin-right: 2em;
   margin-top: 1em;
   margin-left: 1em;
+}
+
+/* line 39, ../../../app/assets/stylesheets/requests/requests.css.scss */
+#request-form {
+  margin-top: 1em;
 }

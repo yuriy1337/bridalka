@@ -33,10 +33,14 @@ a {
 */
 /* line 33, ../../app/assets/stylesheets/scaffolds.css.scss */
 #notice {
+  margin-top: 1em;
   color: green;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-/* line 37, ../../app/assets/stylesheets/scaffolds.css.scss */
+/* line 41, ../../app/assets/stylesheets/scaffolds.css.scss */
 .field_with_errors {
   display: inline-block;
   color: #CD0A0A;

@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
   
+  resources :contact_requests
+
   get 'requests/download_prices'
   resources :requests
   resources :galleries

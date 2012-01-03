@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @contact_request.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @contact_request.last_name %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @contact_request.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_request_path(@contact_request) %> |
+<%= link_to 'Back', contact_requests_path %>
