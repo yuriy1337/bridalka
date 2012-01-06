@@ -1,0 +1,17 @@
+/* line 5, ../../../app/assets/stylesheets/contact_requests/contact_requests.css.scss */
+.two-wide {
+  float: left;
+  margin-right: 2em;
+}
+
+/* line 11, ../../../app/assets/stylesheets/contact_requests/contact_requests.css.scss */
+.field {
+  margin-left: 1em;
+}
+
+/* line 15, ../../../app/assets/stylesheets/contact_requests/contact_requests.css.scss */
+#contact-request-form {
+  width: 490px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 1em;
+}

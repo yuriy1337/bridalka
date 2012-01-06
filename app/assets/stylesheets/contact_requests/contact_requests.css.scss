@@ -1,3 +1,19 @@
 // Place all the styles related to the ContactRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.two-wide{
+  float: left;
+  margin-right: 2em;
+  
+}
+
+.field {
+  margin-left: 1em;
+}
+
+#contact-request-form {
+  width: 490px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 1em;
+}

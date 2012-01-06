@@ -1,5 +1,14 @@
-<h1>New contact_request</h1>
+<% content_for :head do %>
+  <title>New Request - Bridal Kaleidoscope</title>
+<% end %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'contact_requests/contact_requests' %>
+  <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.16.custom.css' %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'contact_requests/contact_requests' %>
+<% end %>
+
+<h1>Contact Us</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', contact_requests_path %>
