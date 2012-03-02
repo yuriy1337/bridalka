@@ -1,8 +1,9 @@
 Bridalka::Application.routes.draw do
   
-  resources :contact_requests
-
   get 'requests/download_prices'
+  get 'about_us' => 'about_us#index'
+  
+  resources :contact_requests
   resources :requests
   resources :galleries
 

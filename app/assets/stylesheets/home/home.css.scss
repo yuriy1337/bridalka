@@ -9,3 +9,97 @@
   }
   
 }
+
+
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+*/
+.scrollable {
+
+  /* required settings */
+  position:relative;
+  overflow:hidden;
+  width: 978px;
+  height:170px;
+
+  /* custom decorations */
+  border:1px solid #ccc;
+  background:url(http://static.flowplayer.org/img/global/gradient/h300.png) repeat-x;
+}
+
+/*
+  root element for scrollable items. Must be absolutely positioned
+  and it should have a extremely large width to accomodate scrollable items.
+  it's enough that you set the width and height for the root element and
+  not for this element.
+*/
+.scrollable .items {
+  /* this cannot be too large */
+  width:20000em;
+  position:absolute;
+  clear:both;
+}
+
+.items div {
+  float:left;
+  width:978px;
+}
+
+/* single scrollable item */
+.scrollable img {
+  float:left;
+  //margin:20px 5px 20px 21px;
+  //margin:10px 5px 10px 21px;
+  background-color:#fff;
+  padding:2px;
+  border:1px solid #ccc;
+  width:320px;
+  height:192px;
+  
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+
+/* active item */
+.scrollable .active {
+  border:2px solid #000;
+  position:relative;
+  cursor:default;
+}
+
+
+
+/* position and dimensions of the navigator */
+.navi {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width:20px;
+  height:20px;
+  padding-top: 3px;
+}
+
+
+/* items inside navigator */
+.navi a {
+  width:8px;
+  height:8px;
+  //float:left;
+  margin:3px;
+  background:url(http://static.flowplayer.org/tools/img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+  display: table-cell;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-size:1px;
+}
+
+/* mouseover state */
+.navi a:hover {
+  background-position:0 -8px;      
+}
+
+/* active state (current page state) */
+.navi a.active {
+  background-position:0 -16px;     
+}

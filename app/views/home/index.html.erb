@@ -10,3 +10,30 @@
 <div id='main-image'>
   <%= image_tag "home/p01.jpg" %>
 </div>
+
+<!-- "previous page" action -->
+<a class="prev browse left"></a>
+
+<!-- root element for scrollable -->
+<div class="scrollable" id=browsable>   
+
+   <!-- root element for the items -->
+   <div class="items">
+      <div>
+        <%= image_tag "home/promo1.jpg" %>
+        <%= image_tag "home/promo2.jpg" %>
+        <%= image_tag "home/promo3.jpg" %>
+      </div>
+      <div>
+        <%= image_tag "home/promo2.jpg" %>
+        <%= image_tag "home/promo3.jpg" %>
+        <%= image_tag "home/promo4.jpg" %>
+      </div>
+        
+    </div>
+ </div>
+<!-- "next page" action -->
+<a class="next browse right"></a>
+
+<!-- wrapper for navigator elements -->
+<div class="navi"></div>

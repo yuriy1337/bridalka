@@ -233,17 +233,18 @@ body {
 }
 /* line 153, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li {
+  width: 20em;
   display: table-cell;
   vertical-align: middle;
 }
-/* line 156, ../../app/assets/stylesheets/global.css.scss */
+/* line 157, ../../app/assets/stylesheets/global.css.scss */
 #nav ul li a {
   display: block;
   text-align: center;
   height: 50px;
   line-height: 50px;
 }
-/* line 164, ../../app/assets/stylesheets/global.css.scss */
+/* line 165, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .default {
   color: #FFFFFF;
   background-color: #9b9b9b;
@@ -256,7 +257,7 @@ body {
   background-image: -ms-linear-gradient(top, #9b9b9b 1%, #707070 100%);
   background-image: linear-gradient(top, #9b9b9b 1%, #707070 100%);
 }
-/* line 171, ../../app/assets/stylesheets/global.css.scss */
+/* line 172, ../../app/assets/stylesheets/global.css.scss */
 #nav ul .hover {
   color: #FFFFFF;
   background: #ea5507;

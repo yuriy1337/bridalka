@@ -832,7 +832,7 @@
           
           //$("#gallery").css("float", "none");
           $('#gallery').animate({
-            'width' : '100%',
+            'width' : '96%',
           }, {
             duration : 500,
             specialEasing : {

@@ -1,0 +1,2 @@
+$ ->
+  $("#browsable").scrollable().navigator()

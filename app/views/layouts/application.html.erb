@@ -15,6 +15,8 @@
     <%= javascript_include_tag "application" %>
     <%= yield :javascripts %>
     
+    <%= javascript_include_tag "http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js" %>
+    
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -47,7 +49,7 @@
               <%= link_to "Contact Us", new_contact_request_path  %>
             </li>
             <li class="default">
-              <a>Page5</a>
+              <%= link_to "About Us", about_us_path  %>
             </li>
             <li class="default">
               <a>Page6</a>
