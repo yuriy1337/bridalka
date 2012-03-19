@@ -2,23 +2,5 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//= require galleriffic/basic
-//= require galleriffic/galleriffic-3
+//= require skins/tn3e/tn3e.css
 
-/*
- * Classes
- */
-.thumb {
-  img {
-    width: 75px;
-    height: 75px;
-  }
-}
-
-/*
- * /Classes
- */
-
-#main-content {
-  margin: 20px 0 0 0;
-}

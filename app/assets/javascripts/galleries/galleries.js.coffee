@@ -1,68 +1,76 @@
-#//= require galleriffic/jquery.galleriffic
-#//= require galleriffic/jquery.history
-#//= require galleriffic/jquery.opacityrollover
-#//= require galleriffic/jush
+#= require tn3/jquery.tn3.min.js
 
-$ ->
-  pageload = (hash) ->
-    if hash
-      if hash is "toggleThumbs"
-        gallery.toggleThumbs()
-        false
-      else
-        $.galleriffic.gotoImage hash
-    else
-      gallery.gotoIndex 0
-  $("div.navigation").css
-    width: "300px"
-    float: "left"
-
-  $("div.content").css "display", "block"
-  onMouseOutOpacity = 0.67
-  $("#thumbs ul.thumbs li").opacityrollover
-    mouseOutOpacity: onMouseOutOpacity
-    mouseOverOpacity: 1.0
-    fadeSpeed: "fast"
-    exemptionSelector: ".selected"
-
-  gallery = $("#thumbs").galleriffic(
-    delay: 2500
-    numThumbs: 15
-    preloadAhead: 10
-    enableTopPager: true
-    enableBottomPager: true
-    maxPagesToShow: 7
-    imageContainerSel: "#slideshow"
-    controlsContainerSel: "#controls"
-    captionContainerSel: "#caption"
-    loadingContainerSel: "#loading"
-    renderSSControls: true
-    renderNavControls: true
-    playLinkText: "Play Slideshow"
-    pauseLinkText: "Pause Slideshow"
-    prevLinkText: "&lsaquo; Previous Photo"
-    nextLinkText: "Next Photo &rsaquo;"
-    nextPageLinkText: "Next &rsaquo;"
-    prevPageLinkText: "&lsaquo; Prev"
-    hideThumbsText: "&lsaquo; &lsaquo;"
-    showThumbsText: "&rsaquo; &rsaquo;"
-    enableHistory: true
-    autoStart: false
-    syncTransitions: true
-    defaultTransitionDuration: 900
-    onSlideChange: (prevIndex, nextIndex) ->
-      @find("ul.thumbs").children().eq(prevIndex).fadeTo("fast", onMouseOutOpacity).end().eq(nextIndex).fadeTo "fast", 1.0
-
-    onPageTransitionOut: (callback) ->
-      @fadeTo "fast", 0.0, callback
-
-    onPageTransitionIn: ->
-      @fadeTo "fast", 1.0
-  )
-  $.historyInit pageload, "advanced.html"
-  $("a[rel='history']").live "click", (e) ->
-    return true  unless e.button is 0
-    hash = @href
-    hash = hash.replace(/^.*#/, "")
-    $.historyLoad hash
-    false
+$(document).ready ->
+  $(".gallery").tn3 
+    autoplay: true
+    skinDir: "/assets/skins"
+    skin: "tn3e"
+    width: 980
+    height: 650
+    image:
+      #maxZoom: 1.5
+      #crop: true
+      clickEvent: "dblclick"
+      transitions: [
+        type: "grid"
+        duration: 300
+        easing: "easeInQuad"
+      ,
+        type: "blinds"
+        duration: 430
+        parts: 16
+        partDuration: 500
+        partEasing: "easeInOutQuad"
+        method: "slide"
+        partDirection: "top"
+      ,
+        type: "blinds"
+        duration: 410
+        easing: "easeInQuad"
+        direction: "horizontal"
+        parts: 5
+        partDuration: 390
+        partEasing: "easeOutQuad"
+        method: "scale"
+        partDirection: "bottom"
+      ,
+        type: "blinds"
+        duration: 313
+        easing: "easeInQuad"
+        direction: "vertical"
+        parts: 16
+        partDuration: 1100
+        partEasing: "easeInOutQuart"
+        method: "fade"
+        partDirection: "auto"
+      ,
+        type: "grid"
+        duration: 300
+        easing: "easeOutQuad"
+        gridX: 9
+        gridY: 7
+        sort: "circle"
+        sortReverse: false
+        diagonalStart: "bl"
+        method: "fade"
+        partDuration: 600
+        partEasing: "easeOutSine"
+        partDirection: "left"
+      ,
+        type: "grid"
+        duration: 440
+        easing: "easeInQuad"
+        gridX: 10
+        gridY: 5
+        sort: "random"
+        sortReverse: false
+        diagonalStart: "bl"
+        method: "scale"
+        partDuration: 170
+        partEasing: "easeOutExpo"
+        partDirection: "top"
+       ]
+     thumbnailer:
+      shaderColor: "#aaaaaa"
+      shaderOpacity: 0.8
+      shaderDuration: 800
