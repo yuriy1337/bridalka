@@ -15,19 +15,31 @@
 <a class="prev browse left"></a>
 
 <!-- root element for scrollable -->
-<div class="scrollable" id=browsable>   
+<div class="scrollable" id='browsable'>   
 
    <!-- root element for the items -->
    <div class="items">
       <div>
-        <%= image_tag "home/promo1.jpg" %>
-        <%= image_tag "home/promo2.jpg" %>
-        <%= image_tag "home/promo3.jpg" %>
+        <%= link_to("#promo1", :class => 'fancybox') do %>
+          <%= image_tag "home/promo1.jpg" %>
+        <% end %>
+        <%= link_to("#promo2", :class => 'fancybox') do %>
+          <%= image_tag "home/promo2.jpg" %>
+        <% end %>
+        <%= link_to("#promo3", :class => 'fancybox') do %>
+          <%= image_tag "home/promo3.jpg" %>
+        <% end %>
       </div>
       <div>
-        <%= image_tag "home/promo2.jpg" %>
-        <%= image_tag "home/promo3.jpg" %>
-        <%= image_tag "home/promo4.jpg" %>
+        <%= link_to("#promo2", :class => 'fancybox') do %>
+          <%= image_tag "home/promo2.jpg" %>
+        <% end %>
+        <%= link_to("#promo3", :class => 'fancybox') do %>
+          <%= image_tag "home/promo3.jpg" %>
+        <% end %>
+        <%= link_to("#promo4", :class => 'fancybox') do %>
+          <%= image_tag "home/promo4.jpg" %>
+        <% end %>
       </div>
         
     </div>
@@ -37,3 +49,32 @@
 
 <!-- wrapper for navigator elements -->
 <div class="navi"></div>
+
+<div id="promo1" style="width: 400px; display: none; ">
+  <h3>Limited time offer</h3>
+  <p>
+    Spend $ 3000 or more and receive $ 500 off. Spend $ 2000 or more and receive $ 200 off.
+  </p>
+</div>
+
+<div id="promo2" style="width: 400px; display: none; ">
+  <h3>Limited time offer</h3>
+  <p>
+    Use code OVER100 at the checkout to get free shipping on prints. Canvas is not included.
+  </p>
+</div>
+
+<div id="promo3" style="width: 400px; display: none; ">
+  <h3>Refer a Friend to us and</h3>
+  <p>
+    You will receive $ 50 check for each booking service and your friend receives $ 50 credit for postproduction services. Must be mention before booking.
+    Refer a Friend to us and receive 50% off your next portrait session.
+  </p>
+</div>
+
+<div id="promo4" style="width: 400px; display: none; ">
+  <h3>Limited time offer</h3>
+  <p>
+    Prepaid your prints before the event and receive three prints for price of two. Contact us for details.
+  </p>
+</div>

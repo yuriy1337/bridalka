@@ -25,14 +25,18 @@
       <div id='header' class='center'>
         <div id='top'>
           <div id='logo' class="inline">
-            <%= image_tag "logo/png.png" %>
+            <%= link_to(:controller => 'home', :action => 'index') do %>
+              <%= image_tag "logo/png.png", :alt =>"Logo" %>
+            <% end %>
           </div>
+          <!--
           <div id='login' class="inline">
             <%= form_tag('/login', :id => 'login-form', :class => 'form') do %>
             <%= text_field_tag(:username, 'Username', :class => '.text input', :title => 'Username') %>
             <%= password_field_tag(:password, 'Password', :class => '.text input', :title => 'Password') %>
             <% end %>
           </div>
+          -->
         </div>
         <div id='nav'>
           <ul id='nav_items'>
@@ -49,13 +53,10 @@
               <%= link_to "Contact Us", new_contact_request_path  %>
             </li>
             <li class="default">
+              <%= link_to "Client Login", "https://www.bridalkaleidoscope.com/gallery2.3/main.php"  %>
+            </li>
+            <li class="default">
               <%= link_to "About Us", about_us_path  %>
-            </li>
-            <li class="default">
-              <a>Page6</a>
-            </li>
-            <li class="default">
-              <a>Page7</a>
             </li>
           </ul>
         </div>

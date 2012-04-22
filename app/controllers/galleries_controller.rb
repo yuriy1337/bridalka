@@ -4,6 +4,13 @@ class GalleriesController < ApplicationController
   def index
     @galleries = Gallery.all
 
+    imgDir = Rails.root.join('app','assets','images','galleries','1','full')
+    Dir.foreach(imgDir) {|x| puts "Got #{x}" }
+    @images = Dir.entries(imgDir)
+    
+    @images.delete(".")
+    @images.delete("..")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @galleries }

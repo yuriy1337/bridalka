@@ -4,6 +4,6 @@ class Request < ActiveRecord::Base
             :presence   => {:message => "Email can't be blank"},
             :email      => {:message => 'Email must be valid'})
   validates :zip_code,      :presence => true
-  validates :wedding_date,  :presence => true
+  #validates :wedding_date,  :presence => true
   validates :referent,      :presence => true
 end

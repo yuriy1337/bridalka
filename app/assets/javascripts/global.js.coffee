@@ -1,9 +1,9 @@
 $ ->
   $("#nav ul li").hover(
     () ->
-      $(this).switchClass "default", "hover", 500;
+      $(this).switchClass "default", "hover", 50;
     () ->
-      $(this).switchClass "hover", "default", 500;
+      $(this).switchClass "hover", "default", 100;
   )
   
   $('.input').click(clearText).blur(setText)

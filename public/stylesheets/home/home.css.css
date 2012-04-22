@@ -1,8 +1,8 @@
-/* line 5, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 9, ../../../app/assets/stylesheets/home/home.css.scss */
 #main-image {
   width: 100%;
 }
-/* line 7, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 11, ../../../app/assets/stylesheets/home/home.css.scss */
 #main-image img {
   width: 100%;
 }
@@ -11,7 +11,7 @@
   root element for the scrollable.
   when scrolling occurs this element stays still.
 */
-/* line 18, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 22, ../../../app/assets/stylesheets/home/home.css.scss */
 .scrollable {
   /* required settings */
   position: relative;
@@ -20,7 +20,7 @@
   height: 170px;
   /* custom decorations */
   border: 1px solid #ccc;
-  background: url(http://static.flowplayer.org/img/global/gradient/h300.png) repeat-x;
+  background: url(/assets/jquerytools/h300.png) repeat-x;
 }
 
 /*
@@ -29,7 +29,7 @@
   it's enough that you set the width and height for the root element and
   not for this element.
 */
-/* line 37, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 41, ../../../app/assets/stylesheets/home/home.css.scss */
 .scrollable .items {
   /* this cannot be too large */
   width: 20000em;
@@ -37,14 +37,14 @@
   clear: both;
 }
 
-/* line 44, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 48, ../../../app/assets/stylesheets/home/home.css.scss */
 .items div {
   float: left;
   width: 978px;
 }
 
 /* single scrollable item */
-/* line 50, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 54, ../../../app/assets/stylesheets/home/home.css.scss */
 .scrollable img {
   float: left;
   background-color: #fff;
@@ -57,7 +57,7 @@
 }
 
 /* active item */
-/* line 65, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 69, ../../../app/assets/stylesheets/home/home.css.scss */
 .scrollable .active {
   border: 2px solid #000;
   position: relative;
@@ -65,7 +65,7 @@
 }
 
 /* position and dimensions of the navigator */
-/* line 74, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 78, ../../../app/assets/stylesheets/home/home.css.scss */
 .navi {
   margin-left: auto;
   margin-right: auto;
@@ -76,12 +76,12 @@
 }
 
 /* items inside navigator */
-/* line 85, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 89, ../../../app/assets/stylesheets/home/home.css.scss */
 .navi a {
   width: 8px;
   height: 8px;
   margin: 3px;
-  background: url(http://static.flowplayer.org/tools/img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+  background: url(/assets/jquerytools/navigator.png) 0 0 no-repeat;
   display: table-cell;
   padding-right: 3px;
   padding-left: 3px;
@@ -89,13 +89,13 @@
 }
 
 /* mouseover state */
-/* line 98, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 102, ../../../app/assets/stylesheets/home/home.css.scss */
 .navi a:hover {
   background-position: 0 -8px;
 }
 
 /* active state (current page state) */
-/* line 103, ../../../app/assets/stylesheets/home/home.css.scss */
+/* line 107, ../../../app/assets/stylesheets/home/home.css.scss */
 .navi a.active {
   background-position: 0 -16px;
 }

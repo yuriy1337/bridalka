@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//= require fancybox/helpers/jquery.fancybox-buttons.css
+//= require fancybox/helpers/jquery.fancybox-thumbs.css
+//= require fancybox/jquery.fancybox.css
+
 #main-image {
   width: 100%;
   img {
@@ -25,7 +29,7 @@
 
   /* custom decorations */
   border:1px solid #ccc;
-  background:url(http://static.flowplayer.org/img/global/gradient/h300.png) repeat-x;
+  background:url(/assets/jquerytools/h300.png) repeat-x;
 }
 
 /*
@@ -87,7 +91,7 @@
   height:8px;
   //float:left;
   margin:3px;
-  background:url(http://static.flowplayer.org/tools/img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+  background:url(/assets/jquerytools/navigator.png) 0 0 no-repeat;
   display: table-cell;
   padding-right: 3px;
   padding-left: 3px;

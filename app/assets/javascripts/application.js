@@ -1,7 +1,6 @@
 //for some reason including all this here breaks galleriffic 
 //= require jquery
-//= require jquery-ui
+//= require jqueryui/jquery-ui-1.8.18.custom.min.js
 //= require jquery_ujs
-//= require tn3/jquery.tn3.min.js
 // require_tree .
 //= require global

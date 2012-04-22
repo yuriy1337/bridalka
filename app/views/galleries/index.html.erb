@@ -13,28 +13,17 @@
       end>
 -->
 <div id="page">
-  
-  
   <div id="container">
     <div class="gallery">
-      <%= link_to(image_path("galleries/1/0001.jpg"), :class => '', :name => 'Image 1', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0001.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
-      <%= link_to(image_path("galleries/1/0002.jpg"), :class => '', :name => 'Image 2', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0002.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
-      <%= link_to(image_path("galleries/1/0003.jpg"), :class => '', :name => 'Image 3', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0003.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
-      <%= link_to(image_path("galleries/1/0004.jpg"), :class => '', :name => 'Image 4', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0004.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
-      <%= link_to(image_path("galleries/1/0005.jpg"), :class => '', :name => 'Image 5', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0005.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
-      <%= link_to(image_path("galleries/1/0006.jpg"), :class => '', :name => 'Image 6', :title => 'Title1') do %>
-        <%= image_tag "galleries/1/0006.jpg", :alt =>"", :size => "32x32" %>
-      <% end %>
+      <div class="tn3 album">
+        <h4>Album 1</h4>
+        <div class="tn3 description">Full size images - good for fullscreen view</div>
+        <% @images.each do |i| %>
+            <%= link_to(image_path("galleries/1/full/#{i}"), :class => '', :name => 'Image 1', :title => 'Title1') do %>
+              <%= image_tag "galleries/1/thumb/#{i}", :alt =>"", :size => "32x32" %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
