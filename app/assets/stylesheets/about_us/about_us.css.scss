@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #about-us-description {
+  padding: 20px 10px 10px 10px;
   margin-right: auto;
   margin-left: auto;
   width: 900px;
+}
+
+#about-us-description > img {
+  padding: 5px 15px 5px 15px;
 }

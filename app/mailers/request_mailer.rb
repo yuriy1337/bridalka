@@ -10,6 +10,6 @@ class RequestMailer < ActionMailer::Base
   def request_submitted_selfnotify(request)
     @request = request
     #attachments["pdf.pdf"] = File.read("#{Rails.root}/public/pdfs")
-    mail(:to => "yuriy1337@gmail.com", :subject => "A Prices Request Has Been Submitted", :from => "mail@bridalkaleidoscope.com")
+    mail(:to => "mail@bridalkaleidoscope.com", :subject => "A Prices Request Has Been Submitted", :from => "mail@bridalkaleidoscope.com")
   end
 end

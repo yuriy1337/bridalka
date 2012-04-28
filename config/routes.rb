@@ -3,9 +3,9 @@ Bridalka::Application.routes.draw do
   get 'requests/download_prices'
   get 'about_us' => 'about_us#index'
   
-  resources :contact_requests
-  resources :requests
-  resources :galleries
+  resources :contact_requests, :only => [:new, :create]
+  resources :requests, :only => [:new, :create, :download_prices]
+  resources :galleries, :only => [:index]
 
   root :to => 'home#index'
   

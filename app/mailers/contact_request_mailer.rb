@@ -4,6 +4,6 @@ class ContactRequestMailer < ActionMailer::Base
   def contact_request_submitted(request)
     @request = request
     #attachments["pdf.pdf"] = File.read("#{Rails.root}/public/pdfs")
-    mail(:to => "yuriy1337@gmail.com", :subject => "Contact Request submitted", :from => "mail@bridalkaleidoscope.com")
+    mail(:to => "mail@bridalkaleidoscope.com", :subject => "Contact Request submitted", :from => "mail@bridalkaleidoscope.com")
   end
 end
