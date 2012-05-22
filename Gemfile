@@ -6,7 +6,6 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :production do
   gem "mysql2"
-  #gem "rack", "1.2.1"
 end
 
 group :development, :test do
@@ -20,6 +19,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'rvm-capistrano'
 
 gem "compass", ">= 0.11.5"
 gem 'jquery-rails'
