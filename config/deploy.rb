@@ -1,9 +1,16 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-Setup the server details
+default_run_options[:pty] = true 
+
+#Setup the server details
 set :domain, "bridalka.dreamhosters.com"
 set :application, "Bridalka"
+
+#Setup the user details. Will be prompted for password
+set :user, Capistrano::CLI.ui.ask("Username: ")
+set :use_sudo, false
+set :deploy_to, "~/#{domain}/bridalka"
 
 #Setup SCM details.
 set :scm, :git
@@ -11,17 +18,18 @@ set :branch, 'master'
 set :repository,  "git@github.com:yuriy1337/brikalka.git"
 set :deploy_via, :remote_cache
 
-#set ruby string - not sure if necessayry
-set :rvm_ruby_string, 'ree@rails3'
-
-#use system rvm
-set :rvm_type, :system  # Copy the exact line. I really mean :system here
-
-#which rvm to use
+#rvm options
+set :rvm_ruby_string, 'ruby-1.9.3-p194' # Defaults to 'default'
+set :rvm_type, :user
 set :rvm_install_type, :stable
 
 before 'deploy:setup', 'rvm:install_rvm'	#automatically install rvm
-before 'deploy', 'rvm:install_rvm'	#update rvm each time
+#before 'deploy', 'rvm:install_rvm'	#update rvm each time
+
+#use system rvm
+
+
+#before 'deploy:setup', 'rvm:install_ruby'
 
 role :web, domain   # Your HTTP server, Apache/etc
 role :app, domain   # This may be the same as your `Web` server
