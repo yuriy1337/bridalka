@@ -9,7 +9,7 @@ set :application, "Bridalka"
 
 #Setup the user details. Will be prompted for password
 set :user, Capistrano::CLI.ui.ask("Username: ")
-set :use_sudo, false
+set :use_sudo, true
 set :deploy_to, "~/#{domain}/bridalka"
 
 #Setup SCM details.
@@ -20,8 +20,9 @@ set :deploy_via, :remote_cache
 
 #rvm options
 set :rvm_ruby_string, 'ruby-1.9.3-p194' # Defaults to 'default'
-set :rvm_type, :user
+set :rvm_type, :system
 set :rvm_install_type, :stable
+set :rvm_install_with_sudo, true
 
 before 'deploy:setup', 'rvm:install_rvm'	#automatically install rvm
 #before 'deploy', 'rvm:install_rvm'	#update rvm each time
@@ -50,3 +51,5 @@ namespace :deploy do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
  end
+ 
+after :deploy, "passenger:restart"
