@@ -1,12 +1,6 @@
 <% content_for :head do %>
   <title>Download Prices - Bridal Kaleidoscope</title>
 <% end %>
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'requests/requests' %>
-<% end %>
-<% content_for :javascripts do %>
-  <%= javascript_include_tag 'requests/requests' %>
-<% end %>
 
 <% flash.each do |key, msg| %>
     <%= content_tag :div, msg, :class => [key, " message"], :id => "notice" %>
