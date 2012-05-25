@@ -25,4 +25,4 @@ production:
   pool: 5
   username: bridalka
   password: <%= begin IO.read("/home/bridalka/bridalka.dreamhosters.com/.db") rescue "" end %>
-  socket: /tmp/mysql.sock
+  host: mysql.bridalka.dreamhosters.com
