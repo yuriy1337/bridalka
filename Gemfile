@@ -1,12 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
-
+gem "mysql2"
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :production do
   gem "passenger"
-  gem "mysql2"
 end
 
 group :development, :test do
