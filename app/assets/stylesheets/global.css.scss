@@ -1,6 +1,11 @@
+/*
+ * 
 @import "compass";
 @import "compass/css3";
+*/
 @import "blueprint";
+
+@import "compass_twitter_bootstrap";
 
 /*
  * Mixins
@@ -92,8 +97,14 @@ body {
   @include background-image(linear-gradient(top, #FFFFFF 0%, #C4C4C4 100%));
 }
 
+.two-wide{
+  float: left;
+  margin-right: 2em;
+  
+}
+
 #content-all {
-  height: 97%;
+  min-height: 97%;
   margin-top: 10px;
   background-color: white;
   @include box-shadow(black 2px 2px 5px 0px);
@@ -159,6 +170,8 @@ $nav-height: 50px;
         text-align: center;
         height: $nav-height;
         line-height: $nav-height;
+        color: white;
+        text-decoration: none;
       }
     }
     

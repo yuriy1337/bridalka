@@ -14,23 +14,23 @@
       </div>
     <% end %>
   
-    <div class="field two-wide">
-      <%= f.label :first_name, "First Name*" %><br />
-      <%= f.text_field :first_name, :class => "input" %>
+    <div class="crf-field two-wide">
+      <%= f.label :first_name, "First Name*" %>
+      <%= f.text_field :first_name, :class => "" %>
     </div>
-    <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name, :class => "input" %>
+    <div class="crf-field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, :class => "" %>
     </div>
     <div class="clear" ></div>
-    <div class="field">
-      <%= f.label :message, "Message*" %><br />
-      <%= f.text_area :message, :rows => 15, :cols => 55, :class => "input" %>
+    <div class="crf-field">
+      <%= f.label :message, "Message*" %>
+      <%= f.text_area :message, :rows => 15, :cols => 55, :class => "" %>
     </div>
     <div class="actions">
-      <% f.submit "Submit", :class => "ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all" %>
-      <%= button_tag(:type => 'submit', :class => "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-priority-primary jui-font") do %>
-        <%= content_tag(:span, 'Submit', :class => "ui-button-text jui-font") %>
+      <% f.submit "Submit", :class => "" %>
+      <%= button_tag(:type => 'submit', :class => "btn") do %>
+        <%= content_tag(:span, 'Submit', :class => "") %>
     <% end %> 
     </div>
   <% end %>

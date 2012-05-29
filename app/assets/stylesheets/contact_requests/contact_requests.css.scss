@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.two-wide{
+/*.two-wide{
   float: left;
   margin-right: 2em;
   
-}
+}*/
 
-.field {
+.crf-field {
   margin-left: 1em;
 }
 
@@ -16,4 +16,5 @@
   width: 490px;
   padding: 10px 10px 10px 10px;
   margin-top: 1em;
+  background-color: whiteSmoke;
 }

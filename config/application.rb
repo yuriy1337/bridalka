@@ -54,5 +54,6 @@ module Bridalka
     
     config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
     config.sass.load_paths << Compass::Frameworks['blueprint'].stylesheets_directory
+    config.sass.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
   end
 end
