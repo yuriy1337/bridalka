@@ -2,10 +2,10 @@
 <div id="request-form" class="gray-border center">
   <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
-  <div id="error_explanation" class="ui-state-error ui-corner-all">
-    <h2>
-      <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-      <%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+  <div id="error_explanation" class="alert alert-error">
+    <h3>
+      <%= pluralize(@request.errors.count, "error") %> prohibit this request from being saved:
+	</h3>
     <ul>
       <% @request.errors.full_messages.each do |msg| %>
       <li>
@@ -43,7 +43,7 @@
   </div>
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Wedding Info</div>
   <div class="field two-wide">
-    <%= f.label :wedding_date, "Wedding date*"%>
+    <%= f.label :wedding_date, "Wedding date"%>
     <%= f.text_field :wedding_date, :class => "" %>
   </div>
   <div class="field">
@@ -68,7 +68,7 @@
   </div>
   <div class="field">
     <%= f.label :message %>
-    <%= f.text_area :message, :rows => 5, :cols => 65, :class => "" %>
+    <%= f.text_area :message, :rows => 5, :cols => 65, :class => "text-area" %>
   </div>
   <div id="submit-button" class="actions">
     <% f.submit "Submit", :class => "" %>

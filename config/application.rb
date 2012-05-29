@@ -55,5 +55,10 @@ module Bridalka
     config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
     config.sass.load_paths << Compass::Frameworks['blueprint'].stylesheets_directory
     config.sass.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
+	
+	#custom field error
+	ActionView::Base.field_error_proc = Proc.new do |html_tag, instance_tag|
+		"<span class='control-group error'>#{html_tag}</span>".html_safe
+	end
   end
 end

@@ -1,10 +1,10 @@
 <div id="contact-request-form" class="center-min-width gray-border">
   <%= form_for(@contact_request) do |f| %>
     <% if @contact_request.errors.any? %>
-      <div id="error_explanation" class="ui-state-error ui-corner-all">
-        <h2>
-          <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-          <%= pluralize(@contact_request.errors.count, "error") %> prohibited this contact request from being saved:</h2>
+      <div id="error_explanation" class="alert alert-error">
+        <h3>
+          <%= pluralize(@contact_request.errors.count, "error") %> prohibit this contact request from being saved:
+		</h3>
   
         <ul>
         <% @contact_request.errors.full_messages.each do |msg| %>
@@ -25,7 +25,7 @@
     <div class="clear" ></div>
     <div class="crf-field">
       <%= f.label :message, "Message*" %>
-      <%= f.text_area :message, :rows => 15, :cols => 55, :class => "" %>
+      <%= f.text_area :message, :rows => 15, :cols => 55, :class => "text-area" %>
     </div>
     <div class="actions">
       <% f.submit "Submit", :class => "" %>
