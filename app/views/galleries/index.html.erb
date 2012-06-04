@@ -10,8 +10,8 @@
   <div id="container">
     <div class="gallery">
       <div class="tn3 album">
-        <h4>Album 1</h4>
-        <div class="tn3 description">Full size images - good for fullscreen view</div>
+        <h4>Wedding Gallery</h4>
+        <div class="tn3 description">Collection of wedding pictures</div>
         <% @images.each do |i| %>
             <%= link_to(image_path("galleries/1/full/#{i}"), :class => '', :name => 'Image 1', :title => 'Title1') do %>
               <%= image_tag "galleries/1/thumb/#{i}", :alt =>"", :size => "32x32" %>
