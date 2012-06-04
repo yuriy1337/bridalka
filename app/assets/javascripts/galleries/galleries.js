@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   var tn1 = $('.gallery').tn3({
-    skinDir : "/assets/skins",
+    skinDir : "/assets/tn3",
     skin : "tn3e",
     mouseWheel : false,
     imageClick : "fullscreen",
