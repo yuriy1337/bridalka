@@ -36,22 +36,22 @@
         </div>
         <div id='nav'>
           <ul id='nav_items'>
-            <li class="default">
+            <li id="home-nav" class=<%= current_page?(:controller => 'home') ? "active" : "default" %> >
               <%= link_to "Home", :controller => 'home', :action => 'index'  %>
             </li>
-            <li class="default">
+            <li id="galleries-nav" class=<%= current_page?(:controller => 'galleries') ? "active" : "default" %> >
               <%= link_to "Galleries", galleries_path  %>
             </li>
-            <li class="default">
+            <li id="prices-nav" class= <%= params[:controller] == "requests" ? "active" : "default" %> >
               <%= link_to "Prices", new_request_path  %>
             </li>
-            <li class="default">
+            <li id="contact-us-nav" class=<%= params[:controller] == "contact_requests" ? "active" : "default" %> >
               <%= link_to "Contact Us", new_contact_request_path  %>
             </li>
-            <li class="default">
+            <li id="client-login-nav" class="default" >
               <%= link_to "Client Login", "https://www.bridalkaleidoscope.com/gallery2.3/main.php"  %>
             </li>
-            <li class="default">
+            <li id="about-us-nav" class=<%= current_page?(:controller => 'about_us') ? "active" : "default" %> >
               <%= link_to "About Us", about_us_path  %>
             </li>
           </ul>
@@ -63,5 +63,6 @@
         <%= yield %>
       </div>
     </div>
+    <%= render :partial => 'layouts/ga' if Rails.env == 'production' %>
   </body>
 </html>
