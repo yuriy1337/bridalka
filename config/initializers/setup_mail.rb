@@ -9,13 +9,11 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :authentication => :plain,
   :domain => 'bridalkaleidoscope.com',
-  :user_name => APP_CONFIG['username']
+  :user_name => APP_CONFIG['username'],
   :password => APP_CONFIG['password']
 }
 
 #puts "in setup mail"
 
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+ActionMailer::Base.default_url_options[:host] = "bridalkaleidoscope.com"
 #Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
-~
-~
