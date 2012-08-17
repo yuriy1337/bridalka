@@ -10,7 +10,8 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :domain => 'bridalkaleidoscope.com',
   :user_name => APP_CONFIG['username'],
-  :password => APP_CONFIG['password']
+  :password => APP_CONFIG['password'],
+  :openssl_verify_mode  => 'none'
 }
 
 #puts "in setup mail"
