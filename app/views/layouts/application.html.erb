@@ -14,6 +14,8 @@
     <% javascript_include_tag "http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js" %>
     
     <%= csrf_meta_tags %>
+    
+    <%= render :partial => 'layouts/ga' if Rails.env == 'production' %>
   </head>
   <body>
     <div id='content-all' class='center'>
@@ -63,6 +65,5 @@
         <%= yield %>
       </div>
     </div>
-    <%= render :partial => 'layouts/ga' if Rails.env == 'production' %>
   </body>
 </html>
