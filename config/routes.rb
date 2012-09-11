@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
   
+  resources :videos
+
   get 'requests/download_prices'
   get 'about_us' => 'about_us#index'
   

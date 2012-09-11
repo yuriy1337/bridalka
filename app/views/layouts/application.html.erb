@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" %>
     
+    <link rel="stylesheet" href="http://mediafront.org/assets/osmplayer/jquery-ui/dark-hive/jquery-ui-1.8.18.custom.css">
+    <link rel="stylesheet" href="http://mediafront.org/assets/osmplayer/templates/default/css/osmplayer_default.css">
+    
     <%= javascript_include_tag "application" %>
     
     <% javascript_include_tag "http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js" %>
@@ -43,6 +46,9 @@
             </li>
             <li id="galleries-nav" class=<%= current_page?(:controller => 'galleries') ? "active" : "default" %> >
               <%= link_to "Galleries", galleries_path  %>
+            </li>
+            <li id="video-nav" class=<%= current_page?(:controller => 'videos') ? "active" : "default" %> >
+              <%= link_to "Videos", videos_path  %>
             </li>
             <li id="prices-nav" class= <%= params[:controller] == "requests" ? "active" : "default" %> >
               <%= link_to "Prices", new_request_path  %>
