@@ -87,4 +87,12 @@ class GalleriesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+
+  def down
+#    respond_to do |format|
+#      format.html
+#      format.json { head :ok }
+#    end
+  end
 end

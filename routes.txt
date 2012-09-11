@@ -1,0 +1,16 @@
+                  videos GET    /videos(.:format)                   videos#index
+                         POST   /videos(.:format)                   videos#create
+               new_video GET    /videos/new(.:format)               videos#new
+              edit_video GET    /videos/:id/edit(.:format)          videos#edit
+                   video GET    /videos/:id(.:format)               videos#show
+                         PUT    /videos/:id(.:format)               videos#update
+                         DELETE /videos/:id(.:format)               videos#destroy
+requests_download_prices GET    /requests/download_prices(.:format) requests#download_prices
+                about_us GET    /about_us(.:format)                 about_us#index
+        contact_requests POST   /contact_requests(.:format)         contact_requests#create
+     new_contact_request GET    /contact_requests/new(.:format)     contact_requests#new
+                requests POST   /requests(.:format)                 requests#create
+             new_request GET    /requests/new(.:format)             requests#new
+          galleries_down GET    /galleries/down(.:format)           gallery#down
+               galleries GET    /galleries(.:format)                galleries#index
+                    root        /                                   home#index

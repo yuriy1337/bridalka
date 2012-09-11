@@ -7,6 +7,7 @@ Bridalka::Application.routes.draw do
   
   resources :contact_requests, :only => [:new, :create]
   resources :requests, :only => [:new, :create, :download_prices]
+  get 'galleries/down' => 'galleries#down'
   resources :galleries, :only => [:index]
 
   root :to => 'home#index'
