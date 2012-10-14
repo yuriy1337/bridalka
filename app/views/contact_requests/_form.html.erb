@@ -24,6 +24,10 @@
     </div>
     <div class="clear" ></div>
     <div class="crf-field">
+      <%= f.label :email, "Email*" %>
+      <%= f.text_field :email, :class => "" %>
+    </div>
+    <div class="crf-field">
       <%= f.label :message, "Message*" %>
       <%= f.text_area :message, :rows => 15, :cols => 55, :class => "text-area" %>
     </div>
