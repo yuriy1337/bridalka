@@ -1,4 +1,9 @@
 <div id="contact-request-form" class="center-min-width gray-border whiteSmokeBg">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+  	  <%= notice %>
+    </div>
+  <% end %>
   <%= form_for(@contact_request) do |f| %>
     <% if @contact_request.errors.any? %>
       <div id="error_explanation" class="alert alert-error">

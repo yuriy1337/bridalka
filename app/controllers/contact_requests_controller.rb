@@ -45,7 +45,7 @@ class ContactRequestsController < ApplicationController
     respond_to do |format|
       if @contact_request.save
         ContactRequestMailer.contact_request_submitted(@contact_request).deliver
-        format.html { redirect_to new_contact_request_path, notice: 'Contact request was successfully created.' }
+        format.html { redirect_to new_contact_request_path, notice: 'Contact request was successfully submitted.' }
         format.json { render json: @contact_request, status: :created, location: @contact_request }
       else
         format.html { render action: "new" }

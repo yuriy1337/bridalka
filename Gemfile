@@ -22,7 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-#gem "validates_phone_number"
+#validate phone number
 gem "validates_as_phone_number"
 
 gem "compass", ">= 0.11.5"
