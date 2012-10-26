@@ -23,6 +23,6 @@ production:
   encoding: utf8
   database: bridalka_production
   pool: 5
-  username: bridalka
-  password: <%= begin IO.read("/home/bridalka/apps/.db") rescue "" end %>
-  host: mysql.bridalkaleidoscope.com
+  username: <%= APP_CONFIG['mysql']['username'] %>
+  password: <%= APP_CONFIG['mysql']['password'] %>
+  host: <%= APP_CONFIG['mysql']['host'] %>

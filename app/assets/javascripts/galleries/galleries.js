@@ -1,10 +1,13 @@
 //= require tn3/jquery.tn3.min.js
 
 $(document).ready(function() {
+	
   var tn1 = $('.gallery').tn3({
     skinDir : "/assets/tn3",
     skin : "tn3e",
     mouseWheel : false,
+    startWithAlbums : true,
+    autoplay : true,
     imageClick : "fullscreen",
     width : 980,
     height : 820,

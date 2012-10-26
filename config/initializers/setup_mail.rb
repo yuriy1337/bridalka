@@ -10,8 +10,8 @@ if Rails.env.development?
   :port => 587,
   :authentication => :plain,
   :domain => 'gmail.com',
-  :user_name => APP_CONFIG['username'],
-  :password => APP_CONFIG['password'],
+  :user_name => APP_CONFIG['mail']['username'],
+  :password => APP_CONFIG['mail']['password'],
   #:openssl_verify_mode  => 'none'
 }
 
@@ -22,8 +22,8 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :authentication => :plain,
   :domain => 'bridalkaleidoscope.com',
-  :user_name => APP_CONFIG['username'],
-  :password => APP_CONFIG['password'],
+  :user_name => APP_CONFIG['mail']['username'],
+  :password => APP_CONFIG['mail']['password'],
   :openssl_verify_mode  => 'none'
 }
   
