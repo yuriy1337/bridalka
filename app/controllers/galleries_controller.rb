@@ -5,7 +5,7 @@ class GalleriesController < ApplicationController
     @galleries = Gallery.all
 
     imgDir = Rails.root.join('app','assets','images','galleries','1','full')
-    Dir.foreach(imgDir) {|x| puts "Got #{x}" }
+    
     @images = Dir.entries(imgDir)
     
     @images.delete(".")
