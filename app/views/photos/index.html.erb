@@ -13,13 +13,13 @@
   <tr>
     <td><%= photo.gallery_id %></td>
     <td><%= photo.image %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', ([@gallery, photo]) %></td>
+    <td><%= link_to 'Edit', [:edit, @gallery, photo]%></td>
+    <td><%= link_to 'Destroy', ([@gallery, photo]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to 'New Photo', new_gallery_photo_path %>

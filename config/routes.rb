@@ -1,6 +1,4 @@
 Bridalka::Application.routes.draw do
-  
-  resources :photos
 
   resources :videos
 
@@ -10,7 +8,10 @@ Bridalka::Application.routes.draw do
   resources :contact_requests, :only => [:new, :create]
   resources :requests, :only => [:new, :create, :download_prices]
   get 'galleries/down' => 'galleries#down'
-  resources :galleries, :only => [:index]
+  get 'galleries/list' => 'galleries#list'
+  resources :galleries do 
+    resources :photos
+  end
 
   root :to => 'home#index'
   
