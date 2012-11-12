@@ -1,5 +1,7 @@
+#require 'carrierwave/orm/activerecord'
+
 class PhotosController < ApplicationController
-  before_filter :find_gallery#, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_gallery #, :only => [:show, :edit, :update, :destroy]
   
   # GET /photos
   # GET /photos.json
@@ -83,7 +85,7 @@ class PhotosController < ApplicationController
     end
   end
   
-  protected    
+  #protected    
     def find_gallery
       @gallery = Gallery.find(params[:gallery_id])
     end

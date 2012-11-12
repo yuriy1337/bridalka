@@ -38,6 +38,9 @@ gem 'active-model-email-validator'
 #twitter bootstrap
 gem 'compass_twitter_bootstrap'
 
+#uploads
+gem 'carrierwave'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~ > 3.0.0'
 
