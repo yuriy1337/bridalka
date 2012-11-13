@@ -39,6 +39,7 @@ gem 'active-model-email-validator'
 gem 'compass_twitter_bootstrap'
 
 #uploads
+gem "rmagick"
 gem 'carrierwave'
 
 # To use ActiveModel has_secure_password

@@ -7,18 +7,22 @@
       end>
 -->
 <div id="page">
-  <div id="container">
-    <div class="gallery">
-      <div class="tn3 album">
-        <h4>Wedding Gallery</h4>
-        <div class="tn3 description">Collection of wedding pictures</div>
-        <% @images.each do |i| %>
-            <%= link_to(image_path("galleries/1/full/#{i}"), :class => '', :name => 'Image 1', :title => 'Title1') do %>
-              <%= image_tag "galleries/1/thumb/#{i}", :alt =>"", :size => "32x32" %>
-            <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+	<div id="container">
+		<div class="gallery">
+			<% @galleries.each do |gallery| %>
+				<div class="tn3 album">
+					<h4><%= gallery.name.to_s %></h4>
+					<div class="tn3 description">
+						<%= gallery.description.to_s %>
+					</div>
+					<% gallery.photos.each do |photo| %>
+					<%= puts photo.image_url.to_s %>
+						<%= link_to(photo.image_url.to_s, :class => '', :name => 'Image 1', :title => 'Title1') do %>
+							<%= image_tag photo.image_url(:thumb).to_s, :alt =>"", :size => "32x32" %>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>
-

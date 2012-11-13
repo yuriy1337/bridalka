@@ -1,9 +1,10 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
+after :remove, :delete_empty_dir
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -29,17 +30,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  #process :scale => [940, 630]
-  #process :convert => 'png'
+  process :resize_to_fit => [940, 630]
+  process :convert => 'png'
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
-  #version :thumb do
-  #  process :scale => [94, 63]
-  #end
+  version :thumb do
+    process :resize_to_fit => [94, 63]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -52,5 +53,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+ def delete_empty_dir
+    path = ::File.expand_path(store_dir, root)
+    Dir.delete(path) # fails if path not empty dir
+    rescue SystemCallError
+    true # nothing, the dir is not empty
+  end
 
 end

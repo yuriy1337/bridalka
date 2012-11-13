@@ -1,5 +1,3 @@
-#require 'carrierwave/orm/activerecord'
-
 class PhotosController < ApplicationController
   before_filter :find_gallery #, :only => [:show, :edit, :update, :destroy]
   
@@ -60,15 +58,15 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   def update
-    @photo = Photo.find(params[:id])
+    @photo = @gallery.photos.find(params[:id])
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+        format.html { redirect_to ([@gallery, @photo]), notice: 'Photo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        format.json { render json: ([@gallery, @photo]).errors, status: :unprocessable_entity }
       end
     end
   end
@@ -89,4 +87,5 @@ class PhotosController < ApplicationController
     def find_gallery
       @gallery = Gallery.find(params[:gallery_id])
     end
+    
 end

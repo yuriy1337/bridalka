@@ -4,12 +4,20 @@ class GalleriesController < ApplicationController
   def index
     @galleries = Gallery.all
 
-    imgDir = Rails.root.join('app','assets','images','galleries','1','full')
+    gallery1 = @galleries.first
+    #puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+    #puts gallery1.name
+    #p gallery1.photos
+    #gallery1.photos.each do |p|
+    #  puts p.image_url
+    #end
+    #puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+    #imgDir = Rails.root.join('app','assets','images','galleries','1','full')
     
-    @images = Dir.entries(imgDir)
+    #@images = Dir.entries(imgDir)
     
-    @images.delete(".")
-    @images.delete("..")
+    #@images.delete(".")
+    #@images.delete("..")
     
     respond_to do |format|
       format.html # index.html.erb

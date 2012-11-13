@@ -9,10 +9,11 @@
     <th></th>
   </tr>
 
-<% @photos.each do |photo| %>
+<% @photos.each_with_index do |photo, i| %>
   <tr>
     <td><%= photo.gallery_id %></td>
-    <td><%= photo.image %></td>
+    <td><%= (i + 1).to_s %></td>
+    <td><%= image_tag photo.image_url(:thumb).to_s %></td>
     <td><%= link_to 'Show', ([@gallery, photo]) %></td>
     <td><%= link_to 'Edit', [:edit, @gallery, photo]%></td>
     <td><%= link_to 'Destroy', ([@gallery, photo]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
