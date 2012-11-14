@@ -5,7 +5,7 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
-
+/*
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -34,17 +34,20 @@ div {
     margin-bottom: 10px;
   }
 }
-
+*/
 #notice {
   color: green;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  //padding: 2px;
+  //background-color: red;
+  //display: table;
+  display: inline-block;
+  color: #CD0A0A;
 }
 
+/*
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -67,3 +70,4 @@ div {
     list-style: square;
   }
 }
+*/
