@@ -52,6 +52,10 @@ module Bridalka
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
+    # Serving static assets and setting cache headers 
+    config.serve_static_assets = true
+    config.static_cache_control = "public, max-age=31536000"
+    
     config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
     config.sass.load_paths << Compass::Frameworks['blueprint'].stylesheets_directory
     config.sass.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
