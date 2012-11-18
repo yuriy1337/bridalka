@@ -27,7 +27,11 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = @gallery.photos.build
-
+    
+    puts ">>>>>>>>>>>>>>>>>>>>"
+    p @gallery
+    puts ">>>>>>>>>"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @photo }
@@ -42,6 +46,9 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
+    puts "PPPPPPPPPPPPPPPPPPPPPPPPPPP"
+    puts params[:photo]
+    puts "PPPPPPPPPPPPPPPPPPPPPPPPPPP"
     @photo = @gallery.photos.build(params[:photo])
 
     respond_to do |format|
@@ -59,6 +66,17 @@ class PhotosController < ApplicationController
   # PUT /photos/1.json
   def update
     @photo = @gallery.photos.find(params[:id])
+
+    puts "Photo:"
+    p @photo
+    puts "\n\n"
+    puts "Params"
+    p params
+    if(!@photo.current_path.equal?(params[:photo][:image]))
+      puts "???????????????????????????????????"
+      puts "Moving IMage"
+      puts "???????????????????????????????????"
+    end
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
@@ -85,7 +103,7 @@ class PhotosController < ApplicationController
   
   #protected    
     def find_gallery
-      @gallery = Gallery.find(params[:gallery_id])
+      @gallery = Gallery.find_or_create_by_id(params[:gallery_id])
     end
     
 end

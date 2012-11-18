@@ -1,5 +1,9 @@
 Bridalka::Application.routes.draw do
 
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
+
   resources :videos
 
   get 'requests/download_prices'

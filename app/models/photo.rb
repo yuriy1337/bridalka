@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  has_one :gallery
+  belongs_to :gallery, :inverse_of => :photos
   attr_accessible :gallery_id, :image
   mount_uploader :image, ImageUploader
 
