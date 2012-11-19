@@ -19,54 +19,54 @@
     * indicates required
   </div>
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Bride Info</div>
-  <div class="field two-wide">
+  <div class="field field-margin-top two-wide">
     <%= f.label :first_name, "First Name*" %>
     <%= f.text_field :first_name, :class => "" %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :last_name %>
     <%= f.text_field :last_name, :class => "" %>
   </div>
   <div class="clear" ></div>
-  <div class="field two-wide">
+  <div class="field field-margin-top two-wide">
     <%= f.label :email, "Email*" %>
     <%= f.text_field :email, :class => "" %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :phone %>
     <%= f.text_field :phone, :class => "" %>
   </div>
   <div class="clear" ></div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :zip_code, "Zip code*" %>
     <%= f.number_field :zip_code, :class => "" %>
   </div>
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Wedding Info</div>
-  <div class="field two-wide">
+  <div class="field field-margin-top two-wide">
     <%= f.label :wedding_date, "Wedding date"%>
     <%= f.text_field :wedding_date, :class => "" %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :wedding_location %>
     <%= f.text_field :wedding_location, :class => "" %>
   </div>
-  <div class="field two-wide">
+  <div class="field field-margin-top two-wide">
     <%= f.label :ceremony_venue %>
     <%= f.text_field :ceremony_venue, :class => "" %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :reception_venue %>
     <%= f.text_field :reception_venue, :class => "" %>
   </div>
-  <div class="field two-wide">
+  <div class="field field-margin-top two-wide">
     <%= f.label :referent, "Referent*" %>
     <%= f.select :referent, @referent_options, :class => "", :include_blank => true  %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :referent_name %>
     <%= f.text_field :referent_name, :class => "" %>
   </div>
-  <div class="field">
+  <div class="field field-margin-top">
     <%= f.label :message %>
     <%= f.text_area :message, :rows => 5, :cols => 65, :class => "text-area" %>
   </div>
