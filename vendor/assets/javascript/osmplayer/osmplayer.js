@@ -79,8 +79,8 @@ osmplayer.prototype.construct = function() {
     playlist: '',
     node: {},
     swfplayer: 'minplayer/flash/minplayer.swf',
-    logo: 'logo.png',
-    link: 'http://www.mediafront.org'
+    //logo: 'logo.png',
+    //link: 'http://www.mediafront.org'
   }, this.options);
 
   // Call the minplayer display constructor.

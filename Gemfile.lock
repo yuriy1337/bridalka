@@ -200,6 +200,7 @@ DEPENDENCIES
   passenger
   rails (= 3.2.8)
   rails_admin
+  railties
   rmagick
   rvm-capistrano
   sass-rails
