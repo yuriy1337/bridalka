@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116040338) do
+ActiveRecord::Schema.define(:version => 20130115041430) do
 
   create_table "contact_requests", :force => true do |t|
     t.string   "first_name"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20121116040338) do
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
-    t.integer  "type"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "description"
@@ -68,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20121116040338) do
     t.datetime "updated_at",       :null => false
   end
 
+  create_table "urls", :force => true do |t|
+    t.integer  "gallery_id"
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "thumbnail"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -89,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20121116040338) do
   create_table "videos", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "file"
   end
 
 end

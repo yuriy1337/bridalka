@@ -1,0 +1,33 @@
+<div class="gallery">	
+	<% @galleries.each do |gallery| %>
+		<div class="tn3 album">
+			<h4><%= gallery.name.to_s %></h4>
+			<div class="tn3 description">
+				<%= gallery.description.to_s %>
+			</div>
+			<ol>
+			<% if params[:type] == "photo" %>
+				<% gallery.photos.each do |photo| %>
+					<li>
+						<% puts photo.image_url.to_s %>
+							<%= link_to(photo.image_url.to_s, :class => '', :name => 'Image 1', :title => 'Title1') do %>
+								<%= image_tag photo.image_url(:thumb).to_s, :alt =>"", :size => "32x32" %>
+							<% end %>
+					</li>
+				<% end %>
+			<% else params[:type] == "video" %>
+				<% gallery.urls.each do |url| %>
+					<li>
+						<div class="tn3 content">
+							<iframe src="<%= url.address.to_s %>" width="400" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</div>
+						<a href="">
+							<img src="<%= url.thumbnail.to_s %>" />
+						</a>
+					</li>
+				<% end %>
+			<% end %>
+			</ol>
+		</div>
+	<% end %>
+</div>

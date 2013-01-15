@@ -7,7 +7,7 @@ $(document).ready(function() {
     skin : "tn3e",
     mouseWheel : false,
     startWithAlbums : true,
-    autoplay : true,
+    autoplay : false,
     imageClick : "fullscreen",
     width : 980,
     height : 820,

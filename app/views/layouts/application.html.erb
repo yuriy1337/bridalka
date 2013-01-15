@@ -41,11 +41,11 @@
             <li id="home-nav" class=<%= current_page?(:controller => '/home') ? "active" : "default" %> >
               <%= link_to "Home", :controller => '/home', :action => 'index'  %>
             </li>
-            <li id="galleries-nav" class=<%= current_page?(:controller => '/galleries') ? "active" : "default" %> >
-              <%= link_to "Galleries", galleries_path  %>
+            <li id="galleries-nav" class=<%= current_page?(:controller => '/galleries') && params[:type].eql?("photo") ? "active" : "default" %> >
+              <%= link_to "Galleries", galleries_path(:type => "photo") %>
             </li>
-            <li id="video-nav" class=<%= current_page?(:controller => '/videos') ? "active" : "default" %> >
-              <%= link_to "Videos", videos_path  %>
+            <li id="video-nav" class=<%= current_page?(:controller => '/galleries') && params[:type].eql?("video") ? "active" : "default" %> >
+              <%= link_to "Videos", galleries_path(:type => "video") %>
             </li>
             <li id="prices-nav" class= <%= params[:controller] == "/requests" ? "active" : "default" %> >
               <%= link_to "Prices", new_request_path  %>
