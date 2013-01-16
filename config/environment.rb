@@ -1,4 +1,4 @@
-if Rails.env == "development"
+if !Rails.nil?
   APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]
 end
 # Load the rails application
