@@ -3,6 +3,9 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require 'compass'
 require 'sass-rails'
+require 'yaml'
+
+APP_CONFIG = YAML.load_file('config/config.yml')[Rails.env]
 
 module Compass
   RAILS_LOADED = true
@@ -18,6 +21,7 @@ end
 
 module Bridalka
   class Application < Rails::Application
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
