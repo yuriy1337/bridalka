@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   belongs_to :gallery, :inverse_of => :photos
-  attr_accessible :gallery_id, :image
+  attr_accessible :id, :gallery_id, :image
   mount_uploader :image, ImageUploader
 
   after_destroy :remove_directory

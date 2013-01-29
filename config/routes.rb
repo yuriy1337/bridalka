@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
 
+  resources :gallery_types
+
   resources :urls
 
   devise_for :users

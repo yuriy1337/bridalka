@@ -2,12 +2,21 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
     
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @galleries }
+    type = params[:type]
+    
+    if !type.nil?
+      @gallery_type = GalleryType.where("lower(name) =?", type.downcase).first
+    
+      @galleries = @gallery_type.gallery
+    else
+      @galleries = Gallery.all
     end
+    
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.json { render json: @galleries }
+    #end
   end
   
     def list

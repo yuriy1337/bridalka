@@ -1,12 +1,13 @@
 //= require tn3/jquery.tn3.min.js
+var $tn1;
 
 $(document).ready(function() {
 	
-  var tn1 = $('.gallery').tn3({
+  $tn1 = $('.gallery').tn3({
     skinDir : "/assets/tn3",
     skin : "tn3e",
     mouseWheel : false,
-    startWithAlbums : true,
+    startWithAlbums : false,
     autoplay : false,
     imageClick : "fullscreen",
     width : 980,
@@ -82,4 +83,5 @@ $(document).ready(function() {
       shaderDuration : 800
     }
   });
+
 });
