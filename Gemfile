@@ -46,6 +46,8 @@ gem 'carrierwave'
 gem 'devise'
 gem 'rails_admin'
 
+gem 'yui-compressor'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~ > 3.0.0'
 
