@@ -4,11 +4,20 @@ class GalleriesController < ApplicationController
   def index
     
     type = params[:type]
+
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    puts type
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     
     if !type.nil?
       @gallery_type = GalleryType.where("lower(name) =?", type.downcase).first
     
+      puts @gallery_type
+
       @galleries = @gallery_type.gallery
+
+      puts @galleries
+
     else
       @galleries = Gallery.all
     end

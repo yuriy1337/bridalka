@@ -1,18 +1,49 @@
 //= require tn3/jquery.tn3.min.js
+//= require tn3/tn3.touch.min.js
 var $tn1;
 
+var QueryString = function () {
+  // This function is anonymous, is executed immediately and 
+  // the return value is assigned to QueryString!
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0; i<vars.length; i++) {
+    var pair = vars[i].split("=");
+      // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = pair[1];
+      // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [ query_string[pair[0]], pair[1] ];
+      query_string[pair[0]] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(pair[1]);
+    }
+  } 
+    return query_string;
+} ();
+
+
 $(document).ready(function() {
-	
+
+  var showAblumPicker = false;
+  if(QueryString['type'].toLowerCase() === "photo")
+  {
+    showAblumPicker = true;
+  }
+
   $tn1 = $('.gallery').tn3({
     skinDir : "/assets/tn3",
     skin : "tn3e",
     mouseWheel : false,
-    startWithAlbums : false,
+    startWithAlbums : showAblumPicker,
     autoplay : false,
     imageClick : "fullscreen",
     width : 980,
     height : 820,
-    //startWithAlbums:true,
+    startWithAlbums : true,
     image : {
      //maxZoom : 1.5,
       //crop : true,
@@ -83,5 +114,4 @@ $(document).ready(function() {
       shaderDuration : 800
     }
   });
-
 });

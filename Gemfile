@@ -27,7 +27,6 @@ end
 gem "validates_as_phone_number"
 
 gem "compass", ">= 0.11.5"
-gem 'jquery-rails'
 
 #mail sending
 gem 'mail'
