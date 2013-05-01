@@ -29,7 +29,8 @@ var QueryString = function () {
 $(document).ready(function() {
 
   var showAblumPicker = false;
-  if(QueryString['type'].toLowerCase() === "photo")
+  queryStr = QueryString['type'];
+  if(queryStr != null && queryStr.toLowerCase() === "photo")
   {
     showAblumPicker = true;
   }
@@ -43,7 +44,6 @@ $(document).ready(function() {
     imageClick : "fullscreen",
     width : 980,
     height : 820,
-    startWithAlbums : true,
     image : {
      //maxZoom : 1.5,
       //crop : true,

@@ -4,6 +4,7 @@
 #//= require jquerytools/jquery.tools.min.js
 
 $ ->
+  console.log "in home.js"
   $("#browsable").scrollable().navigator()
 
   $(".fancybox").fancybox
