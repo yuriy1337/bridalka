@@ -62,6 +62,11 @@
             </li>
             <li id="about-us-nav" class=<%= current_page?(:controller => '/about_us') ? "active" : "default" %> >
               <%= link_to "About Us", about_us_path  %>
+              <ul>
+                <li>
+                  <%= link_to "Testimonials", testimonials_path  %>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

@@ -1,3 +1,4 @@
+###
 $ ->
   $("#nav ul li").hover(
     () ->
@@ -24,3 +25,4 @@ clearText = ->
 setText = -> 
   if this.value is ''
     this.value = this.title
+###

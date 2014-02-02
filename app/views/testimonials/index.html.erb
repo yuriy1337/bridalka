@@ -1,0 +1,10 @@
+<div id="testimonials-main" class="center top-margin bottom-margin">
+  <div id="testimonial-heading" class="alert alert-info center-alert-width">
+    <p>Testimonials from our customers</p>
+  </div>
+  <% @testimonials.each do |testimonial| %>
+    <div class="center-content-div gray-border whiteSmokeBg testimonial-margin">
+      <div class="testimonial-text-margin"><%= testimonial.text.gsub(/\n/, '<br/>').html_safe %></div>
+    </div>
+  <% end %>
+</div>

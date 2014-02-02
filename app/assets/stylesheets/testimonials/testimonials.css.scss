@@ -1,0 +1,25 @@
+// Place all the styles related to the Testimonials controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.testimonial-margin {
+	margin-bottom: 20px;
+}
+
+.testimonial-text-margin {
+	padding: 10px 10px 10px 10px;
+}
+
+.testimonial-margin:last-of-type
+{
+	margin-bottom: 0px;
+}
+
+#testimonial-heading {
+	text-align: center;
+	font-size: 1.25em;
+}
+
+#testimonials-main {
+	padding-bottom: 20px;
+}

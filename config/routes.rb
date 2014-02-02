@@ -1,5 +1,7 @@
 Bridalka::Application.routes.draw do
 
+  resources :testimonials, :only => [:index]
+
   resources :gallery_types
 
   resources :urls
