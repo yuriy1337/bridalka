@@ -2,17 +2,16 @@
   <title>Download Prices - Bridal Kaleidoscope</title>
 <% end %>
 
-<% flash.each do |key, msg| %>
-    <%= content_tag :div, msg, :class => [key, " message"], :id => "notice" %>
-    <%= content_tag :script, :type => "text/javascript" do -%>
-        setTimeout("new Effect.Fade('notice');", 1500);
+<% if !flash.blank? %>
+  <div id="form-heading" class="alert alert-success center-alert-width">
+    <% flash.each do |key, msg| %>
+        <%= content_tag :p, msg %>
+        <!--content_tag :script, :type => "text/javascript" do -%>
+            setTimeout("new Effect.Fade('notice');", 1500);
+        <end %>-->
     <% end %>
+  </div>
 <% end %>
-<!--
-<div class="notice">
-  <p id="notice"><%= notice %></p>
-</div>
--->
 
 <div id="dl-prices-text">
   <p>

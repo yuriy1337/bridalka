@@ -46,16 +46,13 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     
-    puts '[Params]'
-    p params
     @request = Request.new(params[:request])
-
     
     respond_to do |format|
       
       if @request.save
-        RequestMailer.request_submitted(@request).deliver
-        RequestMailer.request_submitted_selfnotify(@request).deliver
+        #RequestMailer.request_submitted(@request).deliver
+        #RequestMailer.request_submitted_selfnotify(@request).deliver
         format.html { redirect_to requests_download_prices_path, notice: 'Request was successfully created.' }
         format.json { render json: requests_download_prices_path, status: :created, location: @request }
       else
