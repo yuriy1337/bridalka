@@ -2,11 +2,11 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   before_filter :before, :only => [:new, :create]
-  
+
   def before
     @referent_options = [ "None", "Friend", "Relative", "Vendor" ]
   end
-  
+
   def index
     @requests = Request.all
 
@@ -38,21 +38,21 @@ class RequestsController < ApplicationController
   end
 
   # GET /requests/1/edit
-  def edit  
+  def edit
     @request = Request.find(params[:id])
   end
 
   # POST /requests
   # POST /requests.json
   def create
-    
+
     @request = Request.new(params[:request])
-    
+
     respond_to do |format|
-      
+
       if @request.save
-        #RequestMailer.request_submitted(@request).deliver
-        #RequestMailer.request_submitted_selfnotify(@request).deliver
+        RequestMailer.request_submitted(@request).deliver
+        RequestMailer.request_submitted_selfnotify(@request).deliver
         format.html { redirect_to requests_download_prices_path, notice: 'Request was successfully created.' }
         format.json { render json: requests_download_prices_path, status: :created, location: @request }
       else
@@ -90,7 +90,7 @@ class RequestsController < ApplicationController
       format.json { head :ok }
     end
   end
-  
+
   def download_prices
     respond_to do |format|
       format.html { render action: "download_prices" }
