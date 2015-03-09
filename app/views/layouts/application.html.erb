@@ -7,17 +7,18 @@
       <title>Bridal Kaleidoscope</title>
     <% end %>
 
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
     <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" %>
-    
+
     <%= javascript_include_tag "http://code.jquery.com/jquery-1.9.1.min.js" %>
     <%= javascript_include_tag "http://code.jquery.com/jquery-migrate-1.1.1.min.js" %>
-    <%= javascript_include_tag "application" %>
-    
+
     <% javascript_include_tag "http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js" %>
-    
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    
+
     <%= render :partial => 'layouts/ga' if Rails.env == 'production' %>
   </head>
   <body>

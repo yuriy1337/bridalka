@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_filter :find_gallery #, :only => [:show, :edit, :update, :destroy]
-  
+
   # GET /photos
   # GET /photos.json
   def index
@@ -27,11 +27,11 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = @gallery.photos.build
-    
+
     puts ">>>>>>>>>>>>>>>>>>>>"
     p @gallery
     puts ">>>>>>>>>"
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @photo }
@@ -100,10 +100,16 @@ class PhotosController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  #protected    
+
+  #protected
     def find_gallery
       @gallery = Gallery.find_or_create_by_id(params[:gallery_id])
     end
-    
+
+  private
+
+  def photo_params
+    params.require(:photo).permit(:id, :gallery_id, :image)
+  end
+
 end

@@ -46,13 +46,28 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
 
-    @request = Request.new(params[:request])
+    @request = Request.new(request_params)
+
+    if !@request.wedding_date.blank?
+      begin
+        @request.wedding_date = Date.strptime(request_params[:wedding_date], '%m/%d/%Y')
+      rescue ArgumentError
+       # handle invalid date
+      end
+    end
+
+    puts @request.inspect
 
     respond_to do |format|
 
       if @request.save
-        RequestMailer.request_submitted(@request).deliver
-        RequestMailer.request_submitted_selfnotify(@request).deliver
+
+        # Only send email in production
+        if Rails.env.production?
+          RequestMailer.request_submitted(@request).deliver
+          RequestMailer.request_submitted_selfnotify(@request).deliver
+        end
+
         format.html { redirect_to requests_download_prices_path, notice: 'Request was successfully created.' }
         format.json { render json: requests_download_prices_path, status: :created, location: @request }
       else
@@ -97,4 +112,23 @@ class RequestsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def request_params
+        params.require(:request).permit(:first_name,
+                                        :last_name,
+                                        :email,
+                                        :phone,
+                                        :zip_code,
+                                        :wedding_date,
+                                        :wedding_location,
+                                        :ceremony_venue,
+                                        :reception_venue,
+                                        :referent,
+                                        :referent_name,
+                                        :message)
+    end
 end
+
+

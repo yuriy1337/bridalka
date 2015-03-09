@@ -1,0 +1,1 @@
+scope :published, -> { where('published_on <= ?', Time.now.to_date) }

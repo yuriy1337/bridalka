@@ -1,10 +1,10 @@
 class Photo < ActiveRecord::Base
   belongs_to :gallery, :inverse_of => :photos
-  attr_accessible :id, :gallery_id, :image
+  #attr_accessible :id, :gallery_id, :image
   mount_uploader :image, ImageUploader
 
   after_destroy :remove_directory
-  
+
   def remove_directory
     puts "11111111111111111111111111111111111111111111"
     puts ImageUploader.store_dir.to_s

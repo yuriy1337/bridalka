@@ -1,4 +1,9 @@
-Bridalka::Application.routes.draw do
+Rails.application.routes.draw do
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  root 'home#index'
 
   resources :testimonials, :only => [:index]
 
@@ -14,17 +19,15 @@ Bridalka::Application.routes.draw do
 
   get 'requests/download_prices'
   get 'about_us' => 'about_us#index'
-  
+
   resources :contact_requests, :only => [:new, :create]
   resources :requests, :only => [:new, :create, :download_prices]
   get 'galleries/down' => 'galleries#down'
   get 'galleries/list' => 'galleries#list'
-  resources :galleries do 
+  resources :galleries do
     resources :photos
   end
 
-  root :to => 'home#index'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -71,14 +74,4 @@ Bridalka::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
 end

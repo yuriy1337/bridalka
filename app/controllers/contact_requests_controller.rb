@@ -40,11 +40,16 @@ class ContactRequestsController < ApplicationController
   # POST /contact_requests
   # POST /contact_requests.json
   def create
-    @contact_request = ContactRequest.new(params[:contact_request])
+    @contact_request = ContactRequest.new(contact_request_params)
 
     respond_to do |format|
       if @contact_request.save
-        ContactRequestMailer.contact_request_submitted(@contact_request).deliver
+
+        # Only send email in production
+        if Rails.env.production?
+          ContactRequestMailer.contact_request_submitted(@contact_request).deliver
+        end
+
         format.html { redirect_to new_contact_request_path, notice: 'Contact request was successfully submitted.' }
         format.json { render json: @contact_request, status: :created, location: @contact_request }
       else
@@ -80,5 +85,15 @@ class ContactRequestsController < ApplicationController
       format.html { redirect_to contact_requests_url }
       format.json { head :ok }
     end
+  end
+
+  private
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def contact_request_params
+      params.require(:contact_request).permit(:first_name,
+                                              :last_name,
+                                              :email,
+                                              :phone_number,
+                                              :message)
   end
 end

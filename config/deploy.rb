@@ -1,68 +1,58 @@
-require "bundler/capistrano"
-require "rvm/capistrano"
+# config valid only for Capistrano 3.1
+lock '3.2.1'
 
-default_run_options[:pty] = true 
+set :application, 'Bridalka'
+set :repo_url, 'git@github.com:yuriy1337/bridalka.git'
 
-#Setup the server details
-set :domain, "bridalkaleidoscope.com"
-set :application, "Bridalka"
+# Default branch is :master
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
-#Setup the user details. Will be prompted for password
-set :user, Capistrano::CLI.ui.ask("Username: ")
-set :use_sudo, true
-set :deploy_to, "~/bridalka/apps/bridalka"
+# Default deploy_to directory is /var/www/my_app
+# set :deploy_to, '/var/www/my_app'
 
-#Setup SCM details.
-set :scm, :git
-set :branch, 'master'
-set :repository,  "git@github.com:yuriy1337/brikalka.git"
-set :deploy_via, :remote_cache
+# Default value for :scm is :git
+# set :scm, :git
 
-#rvm options
-set :rvm_ruby_string, 'ruby-1.9.3-p194' # Defaults to 'default'
-set :rvm_type, :system
-set :rvm_install_type, :stable
-set :rvm_install_with_sudo, true
+# Default value for :format is :pretty
+# set :format, :pretty
 
-#before 'deploy:setup', 'rvm:install_rvm'	#automatically install rvm
-#before 'deploy', 'rvm:install_rvm'	#update rvm each time
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-#use system rvm
+# Default value for :pty is false
+# set :pty, true
 
+# Default value for :linked_files is []
+# set :linked_files, %w{config/database.yml}
 
-#before 'deploy:setup', 'rvm:install_ruby'
+# Default value for linked_dirs is []
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-role :web, domain   # Your HTTP server, Apache/etc
-role :app, domain   # This may be the same as your `Web` server
-role :db,  "mysql.bridalkaleidoscope.com", :primary => true # This is where Rails migrations will run
-#role :db,  "your slave db-server here"
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+# Default value for keep_releases is 5
+# set :keep_releases, 5
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  
-  namespace :assets do
-  task :precompile, :roles => :web, :except => { :no_release => true } do
-    from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-      else  
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      within release_path do
+        execute :rake, 'cache:clear'
       end
     end
+  end
+
 end
-  
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
- end
- 
-after :deploy, "passenger:restart"

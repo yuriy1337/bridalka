@@ -1,3 +1,3 @@
 class Testimonial < ActiveRecord::Base
-  attr_accessible :text
+  #attr_accessible :text
 end

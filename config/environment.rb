@@ -1,8 +1,7 @@
-#if !Rails.nil?
-#  APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]
-#end
-# Load the rails application
+# Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
-# Initialize the rails application
-Bridalka::Application.initialize!
+APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]
+
+# Initialize the Rails application.
+Rails.application.initialize!

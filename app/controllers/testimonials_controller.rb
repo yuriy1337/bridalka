@@ -80,4 +80,10 @@ class TestimonialsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def person_params
+    params.require(:testimonial).permit(:text)
+  end
 end

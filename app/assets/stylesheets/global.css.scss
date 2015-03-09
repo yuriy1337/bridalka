@@ -1,5 +1,5 @@
 /*
- * 
+ *
 @import "compass";
 @import "compass/css3";
 */
@@ -125,7 +125,7 @@
  */
 
 /*
- 
+
 {
   font-size: 17px;
   font-family: Verdana, "sans-serif", serif;
@@ -148,7 +148,7 @@ body {
 .two-wide{
   float: left;
   margin-right: 2em;
-  
+
 }
 
 #content-all {
@@ -175,11 +175,11 @@ body {
   @include blueprint-form-sizes(100px, 195px, 200px);
   @include blueprint-form-borders(#BBBBBB, #000000, #CCCCCC);
   @include form-input-height(10px);
-  
+
   input {
     @include box-shadow(black 1px 1px 1px 0px);
   }
-  
+
 }
 /*
 $nav-default: #C4C4C4;
@@ -188,22 +188,22 @@ $nav-height: 50px;
 #nav {
   width: 100%;
   height: $nav-height;
-  
+
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  
+
   background-color: #9b9b9b; // Old browsers
-  
+
   //margin-left: auto;
   //margin-right: auto;
   text-align: center;
-  
+
   @include box-shadow(black 2px 2px 5px 0px);
-    
+
   @include filter-gradient(#9b9b9b, #707070, vertical); // IE6-9
   @include background-image(linear-gradient(top, #9b9b9b 1%,#707070 100%));
-  
-  ul { 
+
+  ul {
     list-style: none;
     display: table;
     width: 980px;
@@ -222,19 +222,19 @@ $nav-height: 50px;
         text-decoration: none;
       }
     }
-    
+
     .default {
       color: #FFFFFF;
       background-color: #9b9b9b; // Old browsers
       @include filter-gradient(#9b9b9b, #707070, vertical); // IE6-9
       @include background-image(linear-gradient(top, #9b9b9b 1%,#707070 100%));
     }
-      
+
     .hover {
       color: #FFFFFF;
       background: #ea5507;
     }
-    
+
     .active {
       color: #FFFFFF;
       background: #ea5507;
@@ -247,14 +247,14 @@ $nav-height: 50px;
 #nav {
   height: 70px;
   ul {
-    background: #efefef; 
-    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    background: #efefef;
+    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
     box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
     padding: 0 0px 0 20px;
     margin-left: 0px;
-    //border-radius: 10px;  
+    //border-radius: 10px;
     list-style: none;
     position: relative;
     display: inline-table;
@@ -264,14 +264,14 @@ $nav-height: 50px;
       display: none;
       background: #5f6975; border-radius: 0px; padding: 0;
       position: absolute; top: 100%;
-      
+
       /* TODO this shouldn't be constant
-      but inherited from the element above 
+      but inherited from the element above
       Width was not set here before */
       width: 140px;
 
       li {
-        float: none; 
+        float: none;
         border-top: 1px solid #6b727c;
         border-bottom: 1px solid #575f6a;
         position: relative;
