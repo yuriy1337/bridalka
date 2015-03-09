@@ -48,6 +48,14 @@ class RequestsController < ApplicationController
 
     @request = Request.new(params[:request])
 
+    if !@request.wedding_date.blank?
+      begin
+        @request.wedding_date = Date.strptime(request_params[:wedding_date], '%m/%d/%Y')
+      rescue ArgumentError
+       # handle invalid date
+      end
+    end
+
     respond_to do |format|
 
       if @request.save
