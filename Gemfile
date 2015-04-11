@@ -20,7 +20,10 @@ end
 group :assets do
   gem 'sass-rails'#,   '= 3.1.4'
   gem 'coffee-rails'#, '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass'
+  gem 'coffee-script'
+  gem 'uglifier'
+  gem 'therubyracer'
 end
 
 #validate phone number
@@ -61,3 +64,4 @@ group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
 end
+
