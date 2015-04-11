@@ -50,7 +50,7 @@ class RequestsController < ApplicationController
 
     if !@request.wedding_date.blank?
       begin
-				@request.wedding_date = Date.strptime(params[:request][:wedding_date], '%m/%d/%Y')
+	@request.wedding_date = Date.strptime(params[:request][:wedding_date], '%m/%d/%Y')
       rescue ArgumentError
        # handle invalid date
       end
