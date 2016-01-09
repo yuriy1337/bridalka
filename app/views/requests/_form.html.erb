@@ -44,7 +44,12 @@
   <div id="bride-info" class="ui-widget-header ui-tabs ui-widget ui-widget-content" >Wedding Info</div>
   <div class="field field-margin-top two-wide">
     <%= f.label :wedding_date, "Wedding date"%>
-    <%= f.text_field :wedding_date, :class => "" %>
+    <% if @request.wedding_date.nil? %>
+      <%= text_field_tag 'wedding_date_picker', nil, class: "", placeholder: "mm/dd/yyyy" %>
+    <% else %>
+      <%= text_field_tag 'wedding_date_picker', @request.wedding_date.strftime("%m/%d/%Y"), class: "", placeholder: "mm/dd/yyyy" %>
+    <% end %>
+    <%= f.hidden_field :wedding_date, :class => "", :placeholder=>"mm/dd/yyyy" %>
   </div>
   <div class="field field-margin-top">
     <%= f.label :wedding_location %>
