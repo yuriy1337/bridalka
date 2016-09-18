@@ -18,13 +18,13 @@ if Rails.env.development?
 else
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
-  :address => 'mail.bridalkaleidoscope.com',
+  :address => 'smtp.office365.com',
   :port => 587,
-  :authentication => :plain,
+  :authentication => :login,
   :domain => 'bridalkaleidoscope.com',
   :user_name => APP_CONFIG['mail']['username'],
   :password => APP_CONFIG['mail']['password'],
-  :openssl_verify_mode  => 'none'
+  :enable_starttls_auto => true
 }
   
 end
